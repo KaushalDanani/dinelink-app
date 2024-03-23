@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- android_large___16 strings -->
+	<!-- menu strings -->
 
-	<string name="app_name">Page 2</string>
+	<string name="app_name">DineLink</string>
 	<string name="ek_img_content">ExportKit Image</string>
 	<string name="search_item_string">search item</string>
 	<string name="filters_string">Filters</string>
@@ -20,4 +20,23 @@
 	<string name="gravies_string">Gravies</string>
 	<string name="checkout_string">checkout</string>
 	<string name="_2_items_added_string">0 items selected</string>
+
+	<!-- chef strings -->
+
+	<string name="new_orders_string">New orders</string>
+	<string name="pending_orders_string">Pending orders</string>
+	<string name="order_information_string">Order information</string>
+	<string name="table_no__2_string">Table No. 2 </string>
+	<string name="hide_order_string">hide order</string>
+	<string name="table_no__3_string">Table No. 3 </string>
+	<string name="view_order_string">view order</string>
+	<string name="reject_string">Reject</string>
+	<string name="accept_string">Accept</string>
+	<string name="reject_ek1_string">Reject</string>
+	<string name="accept_ek1_string">Accept</string>
+	<string name="_2_string">2</string>
+	<string name="item_string">Item</string>
+	<string name="butter_roti_string">Butter Roti</string>
+	<string name="_4_string">4</string>
+	<string name="qty_string">Qty</string>
 </resources>
