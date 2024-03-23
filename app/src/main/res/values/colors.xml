@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- android_large___16 colors -->
+	<!-- android_large___20 colors -->
 
 	<color name="colorPrimary">#008577</color>
 	<color name="colorPrimaryDark">#00574B</color>
@@ -12,15 +12,12 @@
 	<color name="teal_700">#FF018786</color>
 	<color name="black">#FF000000</color>
 	<color name="white">#FFFFFFFF</color>
-	<color name="transparent">#00ffffff</color>
-	<color name="gray">#676767</color>
+	<color name="transparent">#00FFFFFF</color>
 
-	<color name="_bg__android_large___16_ek2_color">#FFFFFF</color>
-	<color name="search_item_color">#757575</color>
-	<color name="rectangle_21_color">#FFD5D5</color>
-	<color name="filters_color">#484848</color>
-	<color name="paneer_butter_masala_color">#000000</color>
-	<color name="red_brown_gravy_with_tomatoes_and_onion_color">#8F8F8F</color>
-	<color name="starters_color">#868686</color>
-	<color name="rectangle_25_color">#D50000</color>
+	<color name="_bg__android_large___20_ek2_color">#FFFFFF</color>
+	<color name="rectangle_32_color">#FFD5D5</color>
+	<color name="new_orders_color">#000000</color>
+	<color name="gray">#888888</color>
+	<color name="rectangle_36_color">#00B733</color>
+	<color name="rectangle_37_color">#E10000</color>
 </resources>
