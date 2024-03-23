@@ -1,0 +1,308 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:weightSum="300">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="30"
+		android:text="Pending orders"
+		android:textStyle="bold"
+		android:textSize="28sp"
+		android:textColor="@color/black"
+		android:padding="10sp"/>
+
+
+
+		<ImageView
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@drawable/line_5"
+			/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="269"
+		>
+
+		<ListView
+			android:id="@+id/chefOrderListView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+
+
+		</ListView>
+
+	</LinearLayout>
+
+
+
+
+
+
+
+<!--				<View   android:id="@+id/_bg__android_large___20_ek2"-->
+<!--					android:background="@drawable/_bg__android_large___20_ek2_shape"-->
+<!--					 android:layout_marginStart="0dp"-->
+<!--					android:layout_marginTop="0dp"-->
+<!--					android:layout_width="360dp"-->
+<!--					android:layout_height="800dp" />-->
+
+<!--				<View   android:id="@+id/rectangle_32"-->
+<!--					android:background="@drawable/rectangle_32_shape"-->
+<!--					 android:layout_marginStart="31dp"-->
+<!--					android:layout_marginTop="78dp"-->
+<!--					android:layout_width="124dp"-->
+<!--					android:layout_height="30dp" />-->
+
+<!--				<TextView android:id="@+id/new_orders"-->
+<!--					android:textSize="21sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="42dp"-->
+<!--					android:layout_marginTop="78dp"-->
+<!--					android:layout_width="120.1dp"-->
+<!--					android:layout_height="31.1dp"-->
+<!--					android:text="@string/new_orders_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/pending_orders"-->
+<!--					android:textSize="21sp"-->
+<!--					android:textColor="@color/pending_orders_color"-->
+<!--					android:layout_marginLeft="197dp"-->
+<!--					android:layout_marginTop="78dp"-->
+<!--					android:layout_width="153.1dp"-->
+<!--					android:layout_height="31.1dp"-->
+<!--					android:text="@string/pending_orders_string"-->
+<!--					 />-->
+
+<!--				<ImageView android:id="@+id/line_5"-->
+<!--					android:src="@drawable/line_5"-->
+<!--					android:contentDescription="line_5"-->
+<!--					 android:layout_marginStart="10dp"-->
+<!--					android:layout_marginTop="112dp"-->
+<!--					android:layout_width="337dp"-->
+<!--					android:layout_height="1dp" />-->
+
+<!--				<ImageView android:id="@+id/line_9"-->
+<!--					android:src="@drawable/line_9"-->
+<!--					android:contentDescription="line_9"-->
+<!--					 android:layout_marginStart="16dp"-->
+<!--					android:layout_marginTop="214dp"-->
+<!--					android:layout_width="307dp"-->
+<!--					android:layout_height="1dp" />-->
+
+<!--				<TextView android:id="@+id/order_information"-->
+<!--					android:textSize="25sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="11dp"-->
+<!--					android:layout_marginTop="19dp"-->
+<!--					android:layout_width="219.5dp"-->
+<!--					android:layout_height="37.5dp"-->
+<!--					android:text="@string/order_information_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/table_no__2"-->
+<!--					android:textSize="25sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="17dp"-->
+<!--					android:layout_marginTop="123dp"-->
+<!--					android:layout_width="137.5dp"-->
+<!--					android:layout_height="37.5dp"-->
+<!--					android:text="@string/table_no__2_string"-->
+<!--					 />-->
+
+<!--				<View   android:id="@+id/rectangle_34"-->
+<!--					android:background="@drawable/rectangle_34_shape"-->
+<!--					 android:layout_marginStart="234dp"-->
+<!--					android:layout_marginTop="122dp"-->
+<!--					android:layout_width="113dp"-->
+<!--					android:layout_height="34dp" />-->
+
+<!--				<TextView android:id="@+id/hide_order"-->
+<!--					android:textSize="19sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="250dp"-->
+<!--					android:layout_marginTop="128dp"-->
+<!--					android:layout_width="99.9dp"-->
+<!--					android:layout_height="28.9dp"-->
+<!--					android:text="@string/hide_order_string"-->
+<!--					 />-->
+
+<!--				<ImageView android:id="@+id/line_7"-->
+<!--					android:src="@drawable/line_7"-->
+<!--					android:contentDescription="line_7"-->
+<!--					 android:layout_marginStart="10dp"-->
+<!--					android:layout_marginTop="371dp"-->
+<!--					android:layout_width="337dp"-->
+<!--					android:layout_height="1dp" />-->
+
+<!--				<ImageView android:id="@+id/line_8"-->
+<!--					android:src="@drawable/line_8"-->
+<!--					android:contentDescription="line_8"-->
+<!--					 android:layout_marginStart="10dp"-->
+<!--					android:layout_marginTop="493dp"-->
+<!--					android:layout_width="337dp"-->
+<!--					android:layout_height="1dp" />-->
+
+<!--				<TextView android:id="@+id/table_no__3"-->
+<!--					android:textSize="25sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="17dp"-->
+<!--					android:layout_marginTop="382dp"-->
+<!--					android:layout_width="138.5dp"-->
+<!--					android:layout_height="37.5dp"-->
+<!--					android:text="@string/table_no__3_string"-->
+<!--					 />-->
+
+<!--				<View   android:id="@+id/rectangle_35"-->
+<!--					android:background="@drawable/rectangle_35_shape"-->
+<!--					 android:layout_marginStart="234dp"-->
+<!--					android:layout_marginTop="381dp"-->
+<!--					android:layout_width="113dp"-->
+<!--					android:layout_height="34dp" />-->
+
+<!--				<TextView android:id="@+id/view_order"-->
+<!--					android:textSize="19sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="250dp"-->
+<!--					android:layout_marginTop="387dp"-->
+<!--					android:layout_width="100.9dp"-->
+<!--					android:layout_height="28.9dp"-->
+<!--					android:text="@string/view_order_string"-->
+<!--					 />-->
+
+<!--				<View   android:id="@+id/rectangle_36"-->
+<!--					android:background="@drawable/rectangle_36_shape"-->
+<!--					 android:layout_marginStart="11dp"-->
+<!--					android:layout_marginTop="325dp"-->
+<!--					android:layout_width="159dp"-->
+<!--					android:layout_height="37dp" />-->
+
+<!--				<View   android:id="@+id/rectangle_37"-->
+<!--					android:background="@drawable/rectangle_37_shape"-->
+<!--					 android:layout_marginStart="183dp"-->
+<!--					android:layout_marginTop="325dp"-->
+<!--					android:layout_width="166dp"-->
+<!--					android:layout_height="37dp" />-->
+
+<!--				<TextView android:id="@+id/reject"-->
+<!--					android:textSize="29sp"-->
+<!--					android:textColor="@color/_bg__android_large___20_ek2_color"-->
+<!--					android:layout_marginLeft="227dp"-->
+<!--					android:layout_marginTop="322dp"-->
+<!--					android:layout_width="99.9dp"-->
+<!--					android:layout_height="43.9dp"-->
+<!--					android:text="@string/reject_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/accept"-->
+<!--					android:textSize="29sp"-->
+<!--					android:textColor="@color/_bg__android_large___20_ek2_color"-->
+<!--					android:layout_marginLeft="48dp"-->
+<!--					android:layout_marginTop="325dp"-->
+<!--					android:layout_width="108.9dp"-->
+<!--					android:layout_height="43.9dp"-->
+<!--					android:text="@string/accept_string"-->
+<!--					 />-->
+
+<!--				<View   android:id="@+id/rectangle_38"-->
+<!--					android:background="@drawable/rectangle_38_shape"-->
+<!--					 android:layout_marginStart="11dp"-->
+<!--					android:layout_marginTop="446dp"-->
+<!--					android:layout_width="159dp"-->
+<!--					android:layout_height="37dp" />-->
+
+<!--				<View   android:id="@+id/rectangle_39"-->
+<!--					android:background="@drawable/rectangle_39_shape"-->
+<!--					 android:layout_marginStart="183dp"-->
+<!--					android:layout_marginTop="446dp"-->
+<!--					android:layout_width="166dp"-->
+<!--					android:layout_height="37dp" />-->
+
+<!--				<TextView android:id="@+id/reject_ek1"-->
+<!--					android:textSize="29sp"-->
+<!--					android:textColor="@color/_bg__android_large___20_ek2_color"-->
+<!--					android:layout_marginLeft="227dp"-->
+<!--					android:layout_marginTop="443dp"-->
+<!--					android:layout_width="99.9dp"-->
+<!--					android:layout_height="43.9dp"-->
+<!--					android:text="@string/reject_ek1_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/accept_ek1"-->
+<!--					android:textSize="29sp"-->
+<!--					android:textColor="@color/_bg__android_large___20_ek2_color"-->
+<!--					android:layout_marginLeft="48dp"-->
+<!--					android:layout_marginTop="446dp"-->
+<!--					android:layout_width="108.9dp"-->
+<!--					android:layout_height="43.9dp"-->
+<!--					android:text="@string/accept_ek1_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/_2"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="294dp"-->
+<!--					android:layout_marginTop="222dp"-->
+<!--					android:layout_width="28dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/_2_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/item"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="24dp"-->
+<!--					android:layout_marginTop="183dp"-->
+<!--					android:layout_width="58dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/item_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/paneer_butter_masala"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="24dp"-->
+<!--					android:layout_marginTop="222dp"-->
+<!--					android:layout_width="203dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/paneer_butter_masala_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/butter_roti"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="24dp"-->
+<!--					android:layout_marginTop="251dp"-->
+<!--					android:layout_width="113dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/butter_roti_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/_4"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="294dp"-->
+<!--					android:layout_marginTop="247dp"-->
+<!--					android:layout_width="30dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/_4_string"-->
+<!--					 />-->
+
+<!--				<TextView android:id="@+id/qty"-->
+<!--					android:textSize="20sp"-->
+<!--					android:textColor="@color/new_orders_color"-->
+<!--					android:layout_marginLeft="284dp"-->
+<!--					android:layout_marginTop="183dp"-->
+<!--					android:layout_width="49dp"-->
+<!--					android:layout_height="30dp"-->
+<!--					android:text="@string/qty_string"-->
+<!--					 />-->
+
+
+</LinearLayout>

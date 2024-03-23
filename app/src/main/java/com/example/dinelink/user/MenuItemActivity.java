@@ -1,5 +1,5 @@
 
-package com.example.dinelink.menu;
+package com.example.dinelink.user;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,7 +23,7 @@ import com.example.dinelink.R;
 import java.util.ArrayList;
 import java.util.List;
 
-	public class MenuItem extends Activity implements CategoriesAdapter.OnButtonClickListener {
+	public class MenuItemActivity extends Activity implements CategoriesAdapter.OnButtonClickListener {
 
 	private LinearLayout ll;
 	private Button foodItemCheckoutBtn;
@@ -50,7 +50,7 @@ import java.util.List;
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MenuItem.this, "Pressed filter", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MenuItemActivity.this, "Pressed filter", Toast.LENGTH_SHORT).show();
 			}
 		});
 		//custom code goes here
@@ -76,7 +76,7 @@ import java.util.List;
 		LinearLayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
 		categoriesView.setLayoutManager(mLayoutManager);
 
-		mAdapter = new CategoriesAdapter(MenuItem.this,categories, this);
+		mAdapter = new CategoriesAdapter(MenuItemActivity.this,categories, this);
 		categoriesView.setAdapter(mAdapter);
 
 
