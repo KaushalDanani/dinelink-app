@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tableNoTextView"
+        android:layout_width="252dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="Table 2"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/viewOrderToggleBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/viewOrderToggleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/rectangle_34_shape"
+        android:paddingHorizontal="15dp"
+        android:text="view order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tableNoTextView" />
+
+    <ListView
+        android:id="@+id/viewOrderItemListView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:persistentDrawingCache="scrolling"
+        app:layout_constraintEnd_toEndOf="@+id/viewOrderToggleBtn"
+        app:layout_constraintStart_toStartOf="@+id/tableNoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/chefOrderTopLine" />
+
+    <TextView
+        android:id="@+id/chefOrderItemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/chefOrderQuantityTextView"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableNoTextView" />
+
+    <TextView
+        android:id="@+id/chefOrderQuantityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="Quantity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chefOrderItemTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/chefOrderTopLine"
+        android:layout_width="0dp"
+        android:layout_height="7dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/viewOrderToggleBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tableNoTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/line_5" />
+
+    <Button
+        android:id="@+id/orderCompleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rectangle_38_shape"
+        android:text="done"
+        app:layout_constraintEnd_toEndOf="@+id/viewOrderItemListView"
+        app:layout_constraintTop_toBottomOf="@+id/viewOrderItemListView"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
