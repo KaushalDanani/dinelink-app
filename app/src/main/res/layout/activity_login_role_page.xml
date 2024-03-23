@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/content_container"-->
+<!--                android:layout_width="410dp"-->
+<!--                android:layout_height="830dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentBottom="true">-->
+
+
+                <RelativeLayout
+                    android:id="@+id/page_android_large___24_ek1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp">
+
+
+                    <View
+                        android:id="@+id/_bg__android_large___24_ek2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/_bg__android_large___24_ek2_shape" />
+
+                    <ImageView
+                        android:id="@+id/burger_1"
+                        android:layout_width="214dp"
+                        android:layout_height="245dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="208dp"
+                        android:layout_marginTop="366dp"
+                        android:layout_marginEnd="1dp"
+                        android:contentDescription="burger_1"
+                        android:src="@drawable/burger_1" />
+
+                    <ImageView
+                        android:id="@+id/donut_1"
+                        android:layout_width="74dp"
+                        android:layout_height="178dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="-60dp"
+                        android:layout_marginTop="315dp"
+                        android:layout_marginEnd="334dp"
+                        android:contentDescription="donut_1"
+                        android:src="@drawable/donut_1" />
+
+                    <ImageView
+                        android:id="@+id/buritto_1"
+                        android:layout_width="85dp"
+                        android:layout_height="123dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="319dp"
+                        android:layout_marginTop="141dp"
+                        android:layout_marginEnd="19dp"
+                        android:contentDescription="buritto_1"
+                        android:src="@drawable/buritto_1" />
+
+                    <ImageView
+                        android:id="@+id/fries_1"
+                        android:layout_width="122dp"
+                        android:layout_height="91dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="257dp"
+                        android:layout_marginTop="730dp"
+                        android:layout_marginEnd="-4dp"
+                        android:contentDescription="fries_1"
+                        android:src="@drawable/fries_1" />
+
+                    <ImageView
+                        android:id="@+id/ellipse_127"
+                        android:layout_width="152.5dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:contentDescription="ellipse_127"
+                        android:src="@drawable/ellipse_127" />
+
+                    <ImageView
+                        android:id="@+id/indian_thali_food_removebg_preview_1"
+                        android:layout_width="181dp"
+                        android:layout_height="168dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="-48dp"
+                        android:layout_marginTop="659dp"
+                        android:layout_marginEnd="250dp"
+                        android:contentDescription="indian_thali_food_removebg_preview_1"
+                        android:src="@drawable/indian_thali_food_removebg_preview_1" />
+
+                    <View
+                        android:id="@+id/ellipse_128"
+                        android:layout_width="181dp"
+                        android:layout_height="181dp"
+                        android:layout_marginStart="230dp"
+                        android:layout_marginTop="-110dp"
+                        android:alpha="0.20999999344349"
+                        android:background="@drawable/ellipse_128_shape" />
+
+                    <View
+                        android:id="@+id/ellipse_129"
+                        android:layout_width="173dp"
+                        android:layout_height="161dp"
+                        android:layout_marginStart="-109dp"
+                        android:layout_marginTop="-25dp"
+                        android:background="@drawable/ellipse_129_shape" />
+
+                    <View
+                        android:id="@+id/ellipse_130"
+                        android:layout_width="180dp"
+                        android:layout_height="130dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="353dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="-53dp"
+                        android:background="@drawable/ellipse_130_shape" />
+
+                    <TextView
+                        android:id="@+id/dinelink"
+                        android:layout_width="165dp"
+                        android:layout_height="58.6dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginStart="132dp"
+                        android:layout_marginLeft="127dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="86dp"
+                        android:fontFamily="@font/joti_one"
+                        android:gravity="center"
+                        android:text="@string/dinelink_string"
+                        android:textColor="@color/dinelink_color"
+                        android:textSize="36sp" />
+
+                    <ImageView
+                        android:id="@+id/image_4"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="98dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="274dp"
+                        android:contentDescription="image_4"
+                        android:src="@drawable/image_4" />
+
+                    <TextView
+                        android:id="@+id/restaurant_login"
+                        android:layout_width="284dp"
+                        android:layout_height="49.8dp"
+                        android:layout_below="@+id/dinelink"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginStart="41dp"
+                        android:layout_marginLeft="37dp"
+                        android:layout_marginTop="107dp"
+                        android:layout_marginEnd="47dp"
+                        android:fontFamily="@font/sahitya"
+                        android:gravity="center"
+                        android:text="@string/choose_your_role_string"
+                        android:textColor="@color/dinelink_color"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/rectangle_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="86dp"
+                        android:layout_marginTop="287dp"
+                        android:layout_marginEnd="84dp"
+                        android:background="@drawable/rectangle_1_shape"
+                        android:onClick="restaurantLogin" />
+
+                    <ImageView
+                        android:id="@+id/image_1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignStart="@+id/rectangle_1"
+                        android:layout_alignEnd="@+id/rectangle_1"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="303dp"
+                        android:layout_marginEnd="191dp"
+                        android:contentDescription="image_1"
+                        android:onClick="restaurantLogin"
+                        android:src="@drawable/image_1" />
+
+                    <TextView
+                        android:id="@+id/sign_in_with_google"
+                        android:layout_width="180dp"
+                        android:layout_height="49.6dp"
+                        android:layout_alignStart="@+id/rectangle_1"
+                        android:layout_alignTop="@+id/rectangle_1"
+                        android:layout_alignEnd="@+id/rectangle_1"
+                        android:layout_alignBottom="@+id/rectangle_1"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginStart="72dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="9dp"
+                        android:fontFamily="@font/sahitya"
+                        android:gravity="center"
+                        android:onClick="restaurantLogin"
+                        android:text="@string/food_provider_string"
+                        android:textColor="@color/dinelink_color"
+                        android:textSize="26sp" />
+
+                    <View
+                        android:id="@+id/rectangle_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="64dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="86dp"
+                        android:layout_marginTop="388dp"
+                        android:layout_marginEnd="86dp"
+                        android:background="@drawable/rectangle_2_shape"
+                        android:onClick="customerLogin" />
+
+                    <TextView
+                        android:id="@+id/i_m_hungry"
+                        android:layout_width="180dp"
+                        android:layout_height="47.6dp"
+                        android:layout_alignStart="@+id/rectangle_2"
+                        android:layout_alignTop="@+id/rectangle_2"
+                        android:layout_alignEnd="@+id/rectangle_2"
+                        android:layout_alignBottom="@+id/rectangle_2"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginStart="66dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginBottom="9dp"
+                        android:fontFamily="@font/sahitya"
+                        android:gravity="center"
+                        android:onClick="customerLogin"
+                        android:text="@string/i_m_hungry_string"
+                        android:textColor="@color/dinelink_color"
+                        android:textSize="26sp" />
+
+                    <ImageView
+                        android:id="@+id/image_3"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignStart="@+id/rectangle_2"
+                        android:layout_alignEnd="@+id/rectangle_2"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginTop="402dp"
+                        android:layout_marginEnd="186dp"
+                        android:contentDescription="image_3"
+                        android:onClick="customerLogin"
+                        android:src="@drawable/image_3" />
+
+                    <TextView
+                        android:id="@+id/__food_is_love_served_on_a_plate__"
+                        android:layout_width="301dp"
+                        android:layout_height="67.5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginStart="85dp"
+                        android:layout_marginTop="594dp"
+                        android:layout_marginEnd="76dp"
+                        android:fontFamily="@font/salsa"
+                        android:gravity="center"
+                        android:text="@string/__food_is_love_served_on_a_plate___string"
+                        android:textColor="@color/dinelink_color"
+                        android:textSize="25sp" />
+
+                </RelativeLayout>
+<!--            </RelativeLayout>-->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
