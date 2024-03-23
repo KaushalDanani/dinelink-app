@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- menu strings -->
 
@@ -39,4 +38,18 @@
 	<string name="butter_roti_string">Butter Roti</string>
 	<string name="_4_string">4</string>
 	<string name="qty_string">Qty</string>
+    <!-- android_large___24 strings -->
+
+    <string name="dinelink_string">DineLink</string>
+    <string name="choose_your_role_string">CHOOSE YOUR ROLE</string>
+    <string name="food_provider_string">Food Provider</string>
+    <string name="i_m_hungry_string">Im Hungry</string>
+    <string name="__food_is_love_served_on_a_plate___string">"Food is love served on a plate."</string>
+    <string name="costomer_login">CUSTOMER LOGIN</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="cusromer_login_text">Savor flavoes, induge senses, create cherished moments.</string>
+    <string name="rastaurant_login">RESTAURANT LOGIN</string>
+    <string name="rasturant_login">RESTAURANT LOGIN</string>
+    <string name="restaurant_login_text">The fondest memories are made when gathered around the table.</string>
+    <string name="Login">Login</string>
 </resources>

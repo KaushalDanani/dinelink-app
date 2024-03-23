@@ -34,4 +34,12 @@
 	<color name="new_orders_color">#000000</color>
 	<color name="rectangle_36_color">#00B733</color>
 	<color name="rectangle_37_color">#E10000</color>
+	<!-- android_large___24 colors -->
+
+
+	<color name="_bg__android_large___24_ek2_color">#FFFFFF</color>
+	<color name="ellipse_128_color">#FF0F00</color>
+	<color name="ellipse_129_color">#ffffff</color>
+	<color name="dinelink_color">#000000</color>
+	<color name="rectangle_1_color">#FFD5D5</color>
 </resources>
