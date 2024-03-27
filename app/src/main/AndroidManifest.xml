@@ -34,6 +34,10 @@
             android:exported="false">
         </activity>
 
+        <activity android:name=".user.QRCodeScanner"
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".login.Restaurant_Login"
             android:exported="false">
@@ -41,18 +45,13 @@
 
         <activity
             android:name=".chef.ChefLayoutActivity"
-            android:exported="true">
-
+            android:exported="false">
         </activity>
 
         <activity
             android:name=".user.MenuItemActivity"
-            android:exported="true">
-
+            android:exported="false">
         </activity>
-
-
-
 
     </application>
 
