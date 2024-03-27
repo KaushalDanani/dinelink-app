@@ -46,12 +46,21 @@
         <activity
             android:name=".chef.ChefLayoutActivity"
             android:exported="false">
+
         </activity>
 
         <activity
             android:name=".user.MenuItemActivity"
             android:exported="false">
+
         </activity>
+
+        <activity
+            android:name=".user.Confirm_Order"
+            android:exported="false">
+        </activity>
+
+
 
     </application>
 
