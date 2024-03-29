@@ -31,6 +31,7 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
         this.foodList=foodList;
         this.resource=resource;
         this.menuItemsSelectedView=menuItemsSelectedView;
+
     }
 
     @NonNull
@@ -41,6 +42,7 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
         View view = inflater.inflate(resource,null,false);
 
         FoodItem item = foodList.get(position);
+
         TextView foodItemName = view.findViewById(R.id.foodItemName);
         TextView foodItemPrice = view.findViewById(R.id.foodItemPrice);
         TextView foodItemDesc = view.findViewById(R.id.foodItemDesc);
@@ -49,10 +51,10 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
         Button foodItemPlusBtn = view.findViewById(R.id.foodItemPlusBtn);
         Button foodItemMinusBtn = view.findViewById(R.id.foodItemMinusBtn);
 
-        foodItemName.setText(item.getItem_name());
-        foodItemPrice.setText(""+item.getItem_price());
-        foodItemDesc.setText(item.getItem_desc());
-        foodItemQuantity.setText(""+item.getItem_quantity());
+        foodItemName.setText(item.getItemName());
+        foodItemPrice.setText("₹ "+item.getItemPrice());
+        foodItemDesc.setText(item.getItemDesc());
+        foodItemQuantity.setText(""+item.getItemQuantity());
         foodItemPlusBtn.setText("+");
         foodItemMinusBtn.setText("-");
 
@@ -77,7 +79,7 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
 
 
                 foodItemQuantity.setText(""+(q+1));
-                item.setItem_quantity(q+1);
+                item.setItemQuantity(q+1);
             }
         });
 
@@ -103,7 +105,7 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
 
 
                     foodItemQuantity.setText(""+(q-1));
-                    item.setItem_quantity(q-1);
+                    item.setItemQuantity(q-1);
 
                 }
             }

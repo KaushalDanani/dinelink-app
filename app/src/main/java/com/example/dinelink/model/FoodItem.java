@@ -2,87 +2,91 @@ package com.example.dinelink.model;
 
 public class FoodItem {
 
-    int item_id;
-    int hotel_id;
-    String item_name;
-    float item_price;
-    String item_desc;
-    String item_category;
-    String img_url;
+    int itemId;
+    int hotelId;
+    String itemName;
+    float itemPrice;
+    String itemDesc;
+    String itemCategory;
+    String itemImgUrl;
 
-    int item_quantity=0;
+    int itemQuantity=0;
 
-    public FoodItem(int item_id, int hotel_id, String item_name, float item_price, String item_desc, String item_category, String img_url) {
-        this.item_id = item_id;
-        this.hotel_id = hotel_id;
-        this.item_name = item_name;
-        this.item_price = item_price;
-        this.item_desc = item_desc;
-        this.item_category = item_category;
-        this.img_url = img_url;
+
+    public FoodItem(int itemId, int hotelId, String itemName, float itemPrice, String itemDesc, String itemCategory, String itemImgUrl) {
+        this.itemId = itemId;
+        this.hotelId = hotelId;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.itemDesc = itemDesc;
+        this.itemCategory = itemCategory;
+        this.itemImgUrl = itemImgUrl;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public FoodItem() {
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public int getItemId() {
+        return itemId;
     }
 
-    public int getHotel_id() {
-        return hotel_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public void setHotel_id(int hotel_id) {
-        this.hotel_id = hotel_id;
+    public int getHotelId() {
+        return hotelId;
     }
 
-    public String getItem_name() {
-        return item_name;
+    public void setHotelId(int hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public void setItem_name(String item_name) {
-        this.item_name = item_name;
+    public String getItemName() {
+        return itemName;
     }
 
-    public float getItem_price() {
-        return item_price;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public void setItem_price(float item_price) {
-        this.item_price = item_price;
+    public float getItemPrice() {
+        return itemPrice;
     }
 
-    public String getItem_desc() {
-        return item_desc;
+    public void setItemPrice(float itemPrice) {
+        this.itemPrice = itemPrice;
     }
 
-    public void setItem_desc(String item_desc) {
-        this.item_desc = item_desc;
+    public String getItemDesc() {
+        return itemDesc;
     }
 
-    public String getItem_category() {
-        return item_category;
+    public void setItemDesc(String itemDesc) {
+        this.itemDesc = itemDesc;
     }
 
-    public void setItem_category(String item_category) {
-        this.item_category = item_category;
+    public String getItemCategory() {
+        return itemCategory;
     }
 
-    public String getImg_url() {
-        return img_url;
+    public void setItemCategory(String itemCategory) {
+        this.itemCategory = itemCategory;
     }
 
-    public void setImg_url(String img_url) {
-        this.img_url = img_url;
+    public String getItemImgUrl() {
+        return itemImgUrl;
     }
 
-    public int getItem_quantity() {
-        return item_quantity;
+    public void setItemImgUrl(String itemImgUrl) {
+        this.itemImgUrl = itemImgUrl;
     }
 
-    public void setItem_quantity(int item_quantity) {
-        this.item_quantity = item_quantity;
+    public int getItemQuantity() {
+        return itemQuantity;
+    }
+
+    public void setItemQuantity(int itemQuantity) {
+        this.itemQuantity = itemQuantity;
     }
 }

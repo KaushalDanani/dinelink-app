@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -19,11 +20,19 @@ import com.example.dinelink.adapter.CategoriesAdapter;
 import com.example.dinelink.model.FoodItem;
 import com.example.dinelink.adapter.MenuAdapter;
 import com.example.dinelink.R;
+import com.example.dinelink.retrofit.MenuApi;
+import com.example.dinelink.retrofit.RetrofitService;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-	public class MenuItemActivity extends Activity implements CategoriesAdapter.OnButtonClickListener {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MenuItemActivity extends Activity implements CategoriesAdapter.OnButtonClickListener {
 
 	private LinearLayout ll;
 	private Button foodItemCheckoutBtn;
@@ -33,6 +42,11 @@ import java.util.List;
 	CategoriesAdapter mAdapter;
 	MenuAdapter menuAdapter;
 	List<FoodItem> foodList = new ArrayList<>();
+	Set<String> categories = new HashSet<>();
+	List<String> categoryList = new ArrayList<String>();
+	List<FoodItem> categoryItemList = new ArrayList<>();
+
+	List<FoodItem> orderedItems = new ArrayList<>();
 
 
 		@Override
@@ -46,6 +60,7 @@ import java.util.List;
 		foodItemList = findViewById(R.id.foodItemList);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
+		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -53,55 +68,86 @@ import java.util.List;
 				Toast.makeText(MenuItemActivity.this, "Pressed filter", Toast.LENGTH_SHORT).show();
 			}
 		});
-		//custom code goes here
+
+//		Checkout Button
+		foodItemCheckoutBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				for(FoodItem item : foodList)
+				{
+					if(item.getItemQuantity()!=0)
+					{
+						orderedItems.add(item);
+					}
+				}
+			}
+		});
 
 
-//		Categories View
+			int hotelId=1;
 
-		List<String> categories = new ArrayList<>();
-		categories.add("aaa");
-		categories.add("bbb");
-		categories.add("ccc");
-		categories.add("aaa");
-		categories.add("bbb");
-		categories.add("ccc");
-		categories.add("aaa");
-		categories.add("bbb");
-		categories.add("ccc");
-		categories.add("xxx");
-		categories.add("bbb");
-		categories.add("ccc");
+			RetrofitService retrofitService = new RetrofitService();
+			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
+			menuApi.getMenu(hotelId)
+					.enqueue(new Callback<List<FoodItem>>() {
+						@Override
+						public void onResponse(Call<List<FoodItem>> call, Response<List<FoodItem>> response) {
+							foodList=response.body();
+
+							for(FoodItem item : foodList)
+							{
+								categories.add(""+item.getItemCategory());
+							}
+
+							categoryList=new ArrayList<>(categories);
+							LinearLayoutManager mLayoutManager = new LinearLayoutManager(MenuItemActivity.this,LinearLayoutManager.HORIZONTAL,false);
+							categoriesView.setLayoutManager(mLayoutManager);
+							mAdapter = new CategoriesAdapter(MenuItemActivity.this,categoryList, MenuItemActivity.this);
+							categoriesView.setAdapter(mAdapter);
+
+							String category = categoryList.get(0);
+							categoryItemList.clear();
+							for(FoodItem item : foodList)
+							{
+								if(item.getItemCategory().equals(category))
+								{
+									categoryItemList.add(item);
+								}
+							}
 
 
-		LinearLayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-		categoriesView.setLayoutManager(mLayoutManager);
+							MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
+							foodItemList.setAdapter(mad);
 
-		mAdapter = new CategoriesAdapter(MenuItemActivity.this,categories, this);
-		categoriesView.setAdapter(mAdapter);
+						}
 
-
-			FoodItem m1 = new FoodItem(1, 1, "Paneer Masala", 160, "Red Gravy", "Gravy", "");
-			FoodItem m2 = new FoodItem(2, 2, "Paneer Butter Masala", 260, "Brown Gravy", "Gravy", "");
-
-			foodList.add(m1);
-			foodList.add(m2);
-
-			MenuAdapter mad = new MenuAdapter(this,R.layout.menu_item_card_layout,foodList,menuItemsSelectedView);
-			foodItemList.setAdapter(mad);
-
+						@Override
+						public void onFailure(Call<List<FoodItem>> call, Throwable t) {
+							Toast.makeText(MenuItemActivity.this, "Failed to load...", Toast.LENGTH_SHORT).show();
+						}
+					});
 	}
 //		Handle Button Click in Category view
 
 		@Override
 		public void onButtonClick(int position, Button categoryItemButton) {
-			Toast.makeText(this, "click : "+position, Toast.LENGTH_SHORT).show();
 
 			mAdapter.notifyDataSetChanged();
+			String category = categoryList.get(position);
+
+			categoryItemList.clear();
+			for(FoodItem item : foodList)
+			{
+				if(item.getItemCategory().equals(category))
+				{
+					categoryItemList.add(item);
+				}
+			}
+
+			MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
+			foodItemList.setAdapter(mad);
 
 		}
-
-		//	Adapter for menu display
-
 
 	}
 
