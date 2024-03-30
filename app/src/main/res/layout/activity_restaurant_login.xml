@@ -172,19 +172,6 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/image_1"
-            android:layout_width="10dp"
-            android:layout_height="36dp"
-            android:layout_alignStart="@+id/rectangle_1"
-            android:layout_alignEnd="@+id/rectangle_1"
-            android:layout_marginStart="-22dp"
-            android:layout_marginTop="303dp"
-            android:layout_marginEnd="228dp"
-            android:contentDescription="logo_google.png"
-            android:src="@drawable/logo_google" />
-
-
         <TextView
             android:id="@+id/__food_is_love_served_on_a_plate__"
             android:layout_width="wrap_content"

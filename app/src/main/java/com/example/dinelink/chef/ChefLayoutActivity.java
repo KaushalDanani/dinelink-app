@@ -1,27 +1,10 @@
 
-	 
-	/*
-	 *	This content is generated from the API File Info.
-	 *	(Alt+Shift+Ctrl+I).
-	 *
-	 *	@desc 		
-	 *	@file 		android_large___20
-	 *	@date 		Tuesday 12th of March 2024 11:44:04 AM
-	 *	@title 		Page 3
-	 *	@author 	
-	 *	@keywords 	
-	 *	@generator 	Export Kit v1.3.figma
-	 *
-	 */
-	
-
 package com.example.dinelink.chef;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 
