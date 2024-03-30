@@ -9,7 +9,7 @@ import java.sql.Blob;
 public class Hotel {
 
     @Id
-    private String hotel_id;
+    private int hotel_id;
     private String hotel_name;
     private String hote_password;
     private String hotel_addr;
@@ -19,11 +19,11 @@ public class Hotel {
     private String hotel_link;
     private Blob hotel_image;
 
-    public String getHotel_id() {
+    public int getHotel_id() {
         return hotel_id;
     }
 
-    public void setHotel_id(String hotel_id) {
+    public void setHotel_id(int hotel_id) {
         this.hotel_id = hotel_id;
     }
 

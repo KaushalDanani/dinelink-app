@@ -3,12 +3,9 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dinelink
     userName: root
-    password: password
+    password:
 
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-
-server:
-  port: 5050
