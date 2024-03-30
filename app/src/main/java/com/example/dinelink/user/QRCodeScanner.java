@@ -34,7 +34,7 @@ public class QRCodeScanner extends AppCompatActivity {
     private CodeScanner mCodeScanner;
     boolean cameraPermission = false;
     private final int CAMERA_REQ_CODE = 10;
-    private final String name = getIntent().getStringExtra("KeyName");
+//    private final String name = getIntent().getStringExtra("KeyName");
 //    private CameraManager cameraManager;
 //    private String[] cameraID;
 //    boolean isFlashLightOn = false;
@@ -107,7 +107,7 @@ public class QRCodeScanner extends AppCompatActivity {
 //        });
 
         mCodeScanner = new CodeScanner(this, scannerView);
-        welcomeText.setText("Hey, "+name+"\n🍽 Happy Dinner 🍽");
+        welcomeText.setText("Hey, "+"Jay"+"\n🍽 Happy Dinner 🍽");
         askCameraPermission();
 
         if(cameraPermission) {
@@ -118,7 +118,7 @@ public class QRCodeScanner extends AppCompatActivity {
                         @Override
                         public void run() {
                             Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
-                            ii.putExtra("HOTEL_ID", result.getText());
+                            ii.putExtra("HOTEL_ID", Integer.parseInt(result.getText()));
                             startActivity(ii);
                             Toast.makeText(QRCodeScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
                         }

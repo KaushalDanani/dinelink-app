@@ -50,7 +50,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 	List<FoodItem> categoryItemList = new ArrayList<>();
 
 	List<FoodItem> orderedItems = new ArrayList<>();
-//	private int hotelId  = getIntent().getIntExtra("HOTEL_ID",1);
+	private int hotelId;
 
 
 		@Override
@@ -66,7 +66,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 
-
+			hotelId = getIntent().getIntExtra("HOTEL_ID",1);
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -98,7 +98,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		});
 
 
-			int hotelId = 1;
+//			int hotelId = 1;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)
