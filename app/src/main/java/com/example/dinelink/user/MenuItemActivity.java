@@ -2,9 +2,11 @@
 package com.example.dinelink.user;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dinelink.adapter.CategoriesAdapter;
+import com.example.dinelink.chef.ChefLayoutActivity;
 import com.example.dinelink.model.FoodItem;
 import com.example.dinelink.adapter.MenuAdapter;
 import com.example.dinelink.R;
@@ -47,6 +50,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 	List<FoodItem> categoryItemList = new ArrayList<>();
 
 	List<FoodItem> orderedItems = new ArrayList<>();
+//	private int hotelId  = getIntent().getIntExtra("HOTEL_ID",1);
 
 
 		@Override
@@ -61,6 +65,8 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
+
+
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -80,12 +86,19 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 						orderedItems.add(item);
 					}
 				}
+
+				System.out.println("asdf "+orderedItems.size());
+				Intent ii = new Intent(MenuItemActivity.this, ChefLayoutActivity.class);
+				Bundle bb = new Bundle();
+				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
+				ii.putExtras(bb);
+
+				startActivity(ii);
 			}
 		});
 
 
-			int hotelId=1;
-
+			int hotelId = 1;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)

@@ -10,17 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.dinelink.model.ChefOrderItem;
+import com.example.dinelink.model.OrderItem;
 import com.example.dinelink.R;
 
 import java.util.List;
 
-public class ChefOrderItemAdapter extends ArrayAdapter<ChefOrderItem> {
+public class ChefOrderItemAdapter extends ArrayAdapter<OrderItem> {
 
-    private List<ChefOrderItem> orderItemList;
+    private List<OrderItem> orderItemList;
     private Context context;
     private int resource;
-    public ChefOrderItemAdapter(@NonNull Context context, int resource, @NonNull List<ChefOrderItem> orderItemList) {
+    public ChefOrderItemAdapter(@NonNull Context context, int resource, @NonNull List<OrderItem> orderItemList) {
         super(context, resource, orderItemList);
 
         this.context=context;
@@ -38,10 +38,10 @@ public class ChefOrderItemAdapter extends ArrayAdapter<ChefOrderItem> {
         TextView chefOrderItemContentName = view.findViewById(R.id.chefOrderItemContentName);
         TextView chefOrderItemContentQuantity = view.findViewById(R.id.chefOrderItemContentQuantity);
 
-        ChefOrderItem orderItem = orderItemList.get(position);
-        System.out.println(orderItem.getItem_name());
-        chefOrderItemContentName.setText(orderItem.getItem_name());
-        chefOrderItemContentQuantity.setText(""+orderItem.getItem_quantity());
+        OrderItem orderItem = orderItemList.get(position);
+//        System.out.println(orderItem.getItem_name());
+        chefOrderItemContentName.setText(""+orderItem.getItemId());
+        chefOrderItemContentQuantity.setText(""+orderItem.getItemQuantity());
 
 
 

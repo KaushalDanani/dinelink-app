@@ -40,6 +40,7 @@
             android:name=".chef.ChefLayoutActivity"
             android:exported="true">
 
+
         </activity>
 
         <activity
@@ -49,6 +50,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
 
         </activity>
 

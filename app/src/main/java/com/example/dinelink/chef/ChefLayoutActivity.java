@@ -17,26 +17,33 @@
 
 package com.example.dinelink.chef;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dinelink.R;
 import com.example.dinelink.adapter.ChefOrderAdapter;
-import com.example.dinelink.model.ChefOrderItem;
-import com.example.dinelink.model.Order;
+import com.example.dinelink.model.FoodItem;
+import com.example.dinelink.model.Orders;
+import com.example.dinelink.retrofit.OrderApi;
+import com.example.dinelink.retrofit.RetrofitService;
 
-import java.util.ArrayList;
 import java.util.List;
 
-	public class ChefLayoutActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-	private List<Order> orderList = new ArrayList<>();
-	private int table;
+    public class ChefLayoutActivity extends AppCompatActivity {
+
 
 	ListView chefOrderListView;
+
+	private List<Orders> orderList;
 
 
 	@Override
@@ -47,49 +54,36 @@ import java.util.List;
 
 		chefOrderListView = findViewById(R.id.chefOrderListView);
 
+		int hotelId=1;
 
-		ChefOrderItem coi1 = new ChefOrderItem("Paneer Butter Masala",1);
-		ChefOrderItem coi2 = new ChefOrderItem("Butter Roti",2);
+		Intent i1 = getIntent();
+		List<FoodItem> orderedItems = i1.getExtras().getParcelableArrayList("items");
 
-		List<ChefOrderItem> orderItemList = new ArrayList<>();
-		orderItemList.add(coi1);
-		orderItemList.add(coi2);
+		Toast.makeText(this, ""+orderedItems.size(), Toast.LENGTH_SHORT).show();
 
-		table=1;
+		RetrofitService retrofitService = new RetrofitService();
+		OrderApi orderApi = retrofitService.getRetrofit().create(OrderApi.class);
+		orderApi.getOrders(hotelId)
+				.enqueue(new Callback<List<Orders>>() {
+					@Override
+					public void onResponse(Call<List<Orders>> call, Response<List<Orders>> response) {
+						orderList=response.body();
 
-		Order o1 = new Order(new ArrayList<>(orderItemList),table);
 
-		ChefOrderItem coi3 = new ChefOrderItem("Jeera rice",1);
-		orderItemList.add(coi3);
 
-		table=2;
-		Order o2 = new Order(new ArrayList<>(orderItemList),table);
+						ChefOrderAdapter coad = new ChefOrderAdapter(ChefLayoutActivity.this,R.layout.chef_order_card,orderList);
+						chefOrderListView.setAdapter(coad);
 
-		orderList.add(o1);
-		orderList.add(o2);
-		Order o3 = new Order(new ArrayList<>(orderItemList),3);
-		orderList.add(o3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		orderItemList.add(coi3);
-		Order o4 = new Order(new ArrayList<>(orderItemList),4);
-		orderList.add(o4);
+					}
 
-		ChefOrderAdapter coad = new ChefOrderAdapter(this,R.layout.chef_order_card,orderList);
-		chefOrderListView.setAdapter(coad);
-		//custom code goes here
-	
+					@Override
+					public void onFailure(Call<List<Orders>> call, Throwable t) {
+						Toast.makeText(ChefLayoutActivity.this, "Orders Failed to load...", Toast.LENGTH_SHORT).show();
+					}
+				});
+
+
+
 	}
 }
 	
