@@ -47,11 +47,11 @@ public class Confirm_Order extends AppCompatActivity {
         FoodItem rice = new FoodItem(13,2,"Jeera Rice",180.0f,"Rice with Jeera Tadka","Main Course","https://msubaroda.ac.in/asset/images/team/Foundermsu.jpg");
         FoodItem raaita = new FoodItem(14,2,"Shahi Raaita",150.0f,"Salty and sour side dish","Main Course","https://msubaroda.ac.in/asset/images/team/Foundermsu.jpg");
 
-        paneer.setItem_quantity(1);
-        naan.setItem_quantity(13);
-        dal.setItem_quantity(2);
-        rice.setItem_quantity(2);
-        raaita.setItem_quantity(4);
+        paneer.setItemQuantity(1);
+        naan.setItemQuantity(13);
+        dal.setItemQuantity(2);
+        rice.setItemQuantity(2);
+        raaita.setItemQuantity(4);
 
         orderList.add(paneer);
         orderList.add(naan);
@@ -64,7 +64,7 @@ public class Confirm_Order extends AppCompatActivity {
     protected void countTotal(){
         double total = 0;
         for(FoodItem f : orderList){
-            total += f.getItem_quantity() * f.getItem_price();
+            total += f.getItemQuantity() * f.getItemPrice();
         }
         double gst = total * 0.05;
         TotalAmount.setText(total+"");

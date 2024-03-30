@@ -42,10 +42,10 @@ public class OrderListAdapter extends ArrayAdapter<FoodItem> {
         TextView ItemTotal = convertView.findViewById(R.id.ItemTotal);
 
 //        assert t != null;
-        ItemName.setText(t.getItem_name());
-        ItemQty.setText(String.valueOf(t.getItem_quantity()));
-        ItemPrice.setText(String.valueOf(t.getItem_price()));
-        ItemTotal.setText(String.valueOf(t.getItem_price() * t.getItem_quantity()));
+        ItemName.setText(t.getItemName());
+        ItemQty.setText(String.valueOf(t.getItemQuantity()));
+        ItemPrice.setText(String.valueOf(t.getItemPrice()));
+        ItemTotal.setText(String.valueOf(t.getItemPrice() * t.getItemQuantity()));
 
         return convertView;
     }
