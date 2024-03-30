@@ -28,11 +28,11 @@
         app:maskColor="#77000000">
 
         <TextView
+            android:id="@+id/welcomeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="Hey, Kaushal\n🍽 Happy Dinner 🍽"
             android:textColor="@color/white"
             android:textSize="24sp" />
 

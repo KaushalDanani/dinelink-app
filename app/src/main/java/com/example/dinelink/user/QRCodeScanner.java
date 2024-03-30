@@ -1,6 +1,7 @@
 package com.example.dinelink.user;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -27,14 +29,18 @@ import com.example.dinelink.R;
 import com.google.zxing.Result;
 
 public class QRCodeScanner extends AppCompatActivity {
+
+    private TextView welcomeText;
     private CodeScanner mCodeScanner;
     boolean cameraPermission = false;
     private final int CAMERA_REQ_CODE = 10;
+    private final String name = getIntent().getStringExtra("KeyName");
 //    private CameraManager cameraManager;
 //    private String[] cameraID;
 //    boolean isFlashLightOn = false;
 //    private Button flashBtn;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +52,7 @@ public class QRCodeScanner extends AppCompatActivity {
             return insets;
         });
 
+        welcomeText = findViewById(R.id.welcomeText);
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
 //        flashBtn = findViewById(R.id.flashBtn);
 
@@ -100,6 +107,7 @@ public class QRCodeScanner extends AppCompatActivity {
 //        });
 
         mCodeScanner = new CodeScanner(this, scannerView);
+        welcomeText.setText("Hey, "+name+"\n🍽 Happy Dinner 🍽");
         askCameraPermission();
 
         if(cameraPermission) {
@@ -109,6 +117,9 @@ public class QRCodeScanner extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
+                            ii.putExtra("HOTEL_ID", result.getText());
+                            startActivity(ii);
                             Toast.makeText(QRCodeScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
                         }
                     });

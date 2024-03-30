@@ -6,6 +6,10 @@ android {
     namespace 'com.example.dinelink'
     compileSdk 34
 
+    buildFeatures {
+        buildConfig true
+    }
+
     defaultConfig {
         applicationId "com.example.dinelink"
         minSdk 26
@@ -14,6 +18,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "CLIENT_ID", '"291779571169-vnipp7bnkgpe4ej2o5amtd11fiu3pf0e.apps.googleusercontent.com"')
     }
 
     buildTypes {
@@ -39,4 +44,15 @@ dependencies {
     androidTestImplementation libs.espresso.core
 
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.0'
+    implementation 'com.google.android.gms:play-services-auth:21.0.0'
+
+
+
+    implementation "com.google.android.libraries.identity.googleid:googleid:1.1.0"
+
+    implementation "androidx.credentials:credentials:1.3.0-alpha01"
+
+    implementation "androidx.credentials:credentials-play-services-auth:1.3.0-alpha01"
+
+
 }
