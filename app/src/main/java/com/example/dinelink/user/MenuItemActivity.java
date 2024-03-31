@@ -66,7 +66,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 
-			hotelId = getIntent().getIntExtra("HOTEL_ID",1);
+		hotelId = getIntent().getIntExtra("HOTEL_ID",1);
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
