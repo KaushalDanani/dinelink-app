@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,58 +17,55 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DineLink"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
-        </activity>
-
-        <activity android:name=".login.LoginRolePage"
-            android:exported="true">
-
-
-        </activity>
-
-        <activity
-            android:name=".login.Customer_Login"
-            android:exported="false">
-        </activity>
-
-        <activity android:name=".user.QRCodeScanner"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
         </activity>
 
         <activity
-            android:name=".login.Restaurant_Login"
-            android:exported="false">
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".login.LoginRolePage"
+            android:exported="true">
+
         </activity>
+
+        <activity
+            android:name=".login.Customer_Login"
+            android:exported="false" />
+
+        <activity
+            android:name=".user.QRCodeScanner"
+            android:exported="true" />
+
+        <activity
+            android:name=".login.Restaurant_Login"
+            android:exported="false" />
 
         <activity
             android:name=".chef.ChefLayoutActivity"
-            android:exported="false">
-
-
-        </activity>
+            android:exported="false" />
 
         <activity
             android:name=".user.MenuItemActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
 
         <activity
             android:name=".user.Confirm_Order"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
 
     </application>
 
