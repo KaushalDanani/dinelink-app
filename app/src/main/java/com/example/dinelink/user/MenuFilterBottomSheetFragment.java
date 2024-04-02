@@ -15,31 +15,30 @@ import androidx.annotation.Nullable;
 import com.example.dinelink.R;
 import com.example.dinelink.adapter.MenuAdapter;
 import com.example.dinelink.model.FoodItem;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MenuFilterBottomSheetFragment extends BottomSheetDialogFragment {
+public class MenuFilterBottomSheetFragment extends BottomSheetDialog {
 
     Button filterPriceL2H;
     Button filterPriceH2L;
 
     MenuItemActivity menuItemActivity;
 
+
     MenuFilterBottomSheetFragment(MenuItemActivity menuItemActivity){
+        super(menuItemActivity);
         this.menuItemActivity=menuItemActivity;
-    }
+        setContentView(R.layout.menu_filter_bottom_layout);
 
-    @SuppressLint("MissingInflatedId")
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.menu_filter_bottom_layout, container, false);
 
-        filterPriceL2H = view.findViewById(R.id.filterPriceL2H);
-        filterPriceH2L = view.findViewById(R.id.filterPriceH2L);
+
+        filterPriceL2H = findViewById(R.id.filterPriceL2H);
+        filterPriceH2L = findViewById(R.id.filterPriceH2L);
 
         filterPriceL2H.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,16 +54,14 @@ public class MenuFilterBottomSheetFragment extends BottomSheetDialogFragment {
 
                 String category = menuItemActivity.categoryList.get(menuItemActivity.categoryList.indexOf(menuItemActivity.selectedCategory));
                 menuItemActivity.categoryItemList.clear();
-                for(FoodItem item : menuItemActivity.foodList)
-                {
-                    if(item.getItemCategory().equals(category))
-                    {
+                for (FoodItem item : menuItemActivity.foodList) {
+                    if (item.getItemCategory().equals(category)) {
                         menuItemActivity.categoryItemList.add(item);
                     }
                 }
 
 
-                MenuAdapter mad = new MenuAdapter(getContext(),R.layout.menu_item_card_layout,menuItemActivity.categoryItemList,menuItemActivity.menuItemsSelectedView);
+                MenuAdapter mad = new MenuAdapter(getContext(), R.layout.menu_item_card_layout, menuItemActivity.categoryItemList, menuItemActivity.menuItemsSelectedView);
                 menuItemActivity.foodItemList.setAdapter(mad);
 
 
@@ -86,24 +83,31 @@ public class MenuFilterBottomSheetFragment extends BottomSheetDialogFragment {
 
                 String category = menuItemActivity.categoryList.get(menuItemActivity.categoryList.indexOf(menuItemActivity.selectedCategory));
                 menuItemActivity.categoryItemList.clear();
-                for(FoodItem item : menuItemActivity.foodList)
-                {
-                    if(item.getItemCategory().equals(category))
-                    {
+                for (FoodItem item : menuItemActivity.foodList) {
+                    if (item.getItemCategory().equals(category)) {
                         menuItemActivity.categoryItemList.add(item);
                     }
                 }
 
 
-                MenuAdapter mad = new MenuAdapter(getContext(),R.layout.menu_item_card_layout,menuItemActivity.categoryItemList,menuItemActivity.menuItemsSelectedView);
+                MenuAdapter mad = new MenuAdapter(getContext(), R.layout.menu_item_card_layout, menuItemActivity.categoryItemList, menuItemActivity.menuItemsSelectedView);
                 menuItemActivity.foodItemList.setAdapter(mad);
+
 
 
                 dismiss();
             }
         });
 
-        return view;
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+
+
 
     }
 

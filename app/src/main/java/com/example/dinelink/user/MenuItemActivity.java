@@ -37,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MenuItemActivity extends AppCompatActivity implements CategoriesAdapter.OnButtonClickListener {
+public class MenuItemActivity extends Activity implements CategoriesAdapter.OnButtonClickListener {
 
 	private LinearLayout ll;
 	private Button foodItemCheckoutBtn;
@@ -76,7 +76,7 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 			public void onClick(View v) {
 
 				MenuFilterBottomSheetFragment bottomSheetFragment = new MenuFilterBottomSheetFragment(MenuItemActivity.this);
-				bottomSheetFragment.show(getSupportFragmentManager(),bottomSheetFragment.getTag());
+				bottomSheetFragment.show();
 
 
 			}
@@ -126,11 +126,11 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 							mAdapter = new CategoriesAdapter(MenuItemActivity.this,categoryList, MenuItemActivity.this);
 							categoriesView.setAdapter(mAdapter);
 
-							String category = categoryList.get(0);
+							selectedCategory = categoryList.get(0);
 							categoryItemList.clear();
 							for(FoodItem item : foodList)
 							{
-								if(item.getItemCategory().equals(category))
+								if(item.getItemCategory().equals(selectedCategory))
 								{
 									categoryItemList.add(item);
 								}
