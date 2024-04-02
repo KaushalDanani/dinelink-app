@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -28,6 +29,8 @@ import com.example.dinelink.R;
 import com.example.dinelink.retrofit.MenuApi;
 import com.example.dinelink.retrofit.RetrofitService;
 
+import java.io.DataOutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -36,6 +39,9 @@ import java.util.Set;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import android.os.Handler;
+import android.widget.Toast;
 
 public class MenuItemActivity extends AppCompatActivity implements CategoriesAdapter.OnButtonClickListener {
 
@@ -56,6 +62,7 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 
 	String selectedCategory;
 
+	Socket s;
 		@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -68,6 +75,9 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
+
+		SocketProgramming sp = new SocketProgramming(this,s);
+
 
 //		hotelId = getIntent().getIntExtra("HOTEL_ID",1);
 
@@ -95,13 +105,20 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 					}
 				}
 
-				System.out.println("asdf "+orderedItems.size());
-				Intent ii = new Intent(MenuItemActivity.this, ChefLayoutActivity.class);
-				Bundle bb = new Bundle();
-				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
-				ii.putExtras(bb);
-
-				startActivity(ii);
+				try {
+					SocketExecution se = new SocketExecution(MenuItemActivity.this,s,""+orderedItems.size());
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();;
+				}
+//				System.out.println("asdf "+orderedItems.size());
+//				Intent ii = new Intent(MenuItemActivity.this, ChefLayoutActivity.class);
+//				Bundle bb = new Bundle();
+//				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
+//				ii.putExtras(bb);
+//
+//				startActivity(ii);
 			}
 		});
 
@@ -171,6 +188,71 @@ public class MenuItemActivity extends AppCompatActivity implements CategoriesAda
 		}
 
 	}
+
+
+
+class SocketProgramming implements Runnable {
+
+	Thread th;
+	MenuItemActivity menuItemActivity;
+	Handler handler;
+	Socket s;
+
+	SocketProgramming(MenuItemActivity menuItemActivity,Socket s) {
+		this.menuItemActivity = menuItemActivity;
+		th = new Thread(this);
+		this.s=s;
+		handler = new Handler(menuItemActivity.getMainLooper()); // Create a handler for the main UI thread
+		th.start();
+	}
+
+	@Override
+	public void run() {
+		try {
+			s = new Socket("192.168.1.3", 8388);
+			menuItemActivity.s = s;
+			handler.post(new Runnable() { // Post a Runnable to the main UI thread
+				@Override
+				public void run() {
+					Toast.makeText(menuItemActivity, "Client connection successful", Toast.LENGTH_SHORT).show();
+				}
+			});
+		} catch (Exception e) {
+			System.out.println("CLIENT : " + e.getMessage());
+		}
+	}
+}
+
+class SocketExecution implements Runnable{
+	Thread th;
+	MenuItemActivity menuItemActivity;
+	Handler handler;
+	Socket s;
+
+	String data;
+	SocketExecution(MenuItemActivity menuItemActivity, Socket s,String data)
+	{
+		this.menuItemActivity=menuItemActivity;
+		this.s=s;
+		handler=new Handler(menuItemActivity.getMainLooper());
+		th=new Thread(this);
+		this.data=data;
+		th.start();
+	}
+
+	@Override
+	public void run() {
+		try{
+			DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+			dos.writeUTF(data);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+}
 
 
 
