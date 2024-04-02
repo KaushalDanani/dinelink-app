@@ -1,15 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:weightSum="10">
 
     <!-- Add your bottom sheet content here -->
 
-    <Button
-        android:id="@+id/bottom_sheet_button"
+    <TextView
+        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Close" />
+        android:layout_height="0dp"
+        android:text="Sorting Options"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textAlignment="center"
+        android:paddingBottom="10dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/line_1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:text="Price"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
+
+        <Button
+            android:id="@+id/filterPriceL2H"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Low to High"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_23_shape"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/filterPriceH2L"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="High to Low"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_23_shape"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
 </LinearLayout>
