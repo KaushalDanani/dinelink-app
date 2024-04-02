@@ -108,6 +108,7 @@ class SocketProgramming implements Runnable {
 			WifiManager wifiManager = (WifiManager) chefLayoutActivity.getApplicationContext().getSystemService(WIFI_SERVICE);
 			String ipAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
 
+
 			while (true) {
 				handler.post(new Runnable() { // Post a Runnable to the main UI thread
 					@Override
