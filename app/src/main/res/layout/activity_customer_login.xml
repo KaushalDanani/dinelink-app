@@ -4,240 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.Customer_Login">
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dinelink_mainbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:id="@+id/dinelink_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="55dp">
+
+            <!-- ImageView -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_4" />
+
+            <!-- Space view to create dynamic space -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/joti_one"
+                android:text="Dine Link"
+                android:textSize="40sp"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/sahitya"
+            android:gravity="center"
+            android:paddingHorizontal="7dp"
+            android:text="CUSTOMER LOGIN"
+            android:layout_marginHorizontal="17dp"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="#000000">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/dinelink_sign_in_with_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rectangle_1_shape"
+            android:gravity="center"
+            android:onClick="SignIn_With_Google"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp">
+
+            <!-- ImageView -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/logo_google" />
+
+            <!-- Space view to create dynamic space -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sahitya"
+                android:text="Sign-in With Google"
+                android:textSize="26sp"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
 
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:text="@string/cusromer_login_text"
+            android:textSize="32dp"
+            android:textColor="#000000">
 
-                <RelativeLayout
-                    android:id="@+id/page_android_large___24_ek1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="0dp">
-
-                    <View
-                        android:id="@+id/_bg__android_large___24_ek2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/_bg__android_large___24_ek2_shape" />
-
-                    <View
-                        android:id="@+id/btn_signin_with_google"
-                        android:layout_width="100dp"
-                        android:layout_height="64dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="41dp"
-                        android:layout_marginTop="287dp"
-                        android:layout_marginEnd="43dp"
-                        android:background="@drawable/rectangle_1_shape"
-                        android:onClick="SignIn_With_Google"
-                        />
-
-                    <ImageView
-                        android:id="@+id/burger_1"
-                        android:layout_width="214dp"
-                        android:layout_height="245dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="208dp"
-                        android:layout_marginTop="366dp"
-                        android:layout_marginEnd="1dp"
-                        android:contentDescription="burger_1"
-                        android:src="@drawable/burger_1" />
-
-                    <ImageView
-                        android:id="@+id/donut_1"
-                        android:layout_width="74dp"
-                        android:layout_height="178dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="-60dp"
-                        android:layout_marginTop="315dp"
-                        android:layout_marginEnd="334dp"
-                        android:contentDescription="donut_1"
-                        android:src="@drawable/donut_1" />
-
-                    <ImageView
-                        android:id="@+id/buritto_1"
-                        android:layout_width="85dp"
-                        android:layout_height="123dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="319dp"
-                        android:layout_marginTop="141dp"
-                        android:layout_marginEnd="19dp"
-                        android:contentDescription="buritto_1"
-                        android:src="@drawable/buritto_1" />
-
-                    <ImageView
-                        android:id="@+id/fries_1"
-                        android:layout_width="122dp"
-                        android:layout_height="91dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="257dp"
-                        android:layout_marginTop="730dp"
-                        android:layout_marginEnd="-4dp"
-                        android:contentDescription="fries_1"
-                        android:src="@drawable/fries_1" />
-
-                    <ImageView
-                        android:id="@+id/ellipse_127"
-                        android:layout_width="152.5dp"
-                        android:layout_height="64dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:contentDescription="ellipse_127"
-                        android:src="@drawable/ellipse_127" />
-
-                    <ImageView
-                        android:id="@+id/indian_thali_food_removebg_preview_1"
-                        android:layout_width="181dp"
-                        android:layout_height="168dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="-48dp"
-                        android:layout_marginTop="659dp"
-                        android:layout_marginEnd="250dp"
-                        android:contentDescription="indian_thali_food_removebg_preview_1"
-                        android:src="@drawable/indian_thali_food_removebg_preview_1" />
-
-                    <View
-                        android:id="@+id/ellipse_128"
-                        android:layout_width="181dp"
-                        android:layout_height="181dp"
-                        android:layout_marginStart="230dp"
-                        android:layout_marginTop="-110dp"
-                        android:alpha="0.20999999344349"
-                        android:background="@drawable/ellipse_128_shape" />
-
-                    <View
-                        android:id="@+id/ellipse_129"
-                        android:layout_width="173dp"
-                        android:layout_height="161dp"
-                        android:layout_marginStart="-109dp"
-                        android:layout_marginTop="-25dp"
-                        android:background="@drawable/ellipse_129_shape" />
-
-                    <View
-                        android:id="@+id/ellipse_130"
-                        android:layout_width="180dp"
-                        android:layout_height="130dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="353dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="-53dp"
-                        android:background="@drawable/ellipse_130_shape" />
-
-                    <TextView
-                        android:id="@+id/dinelink"
-                        android:layout_width="165dp"
-                        android:layout_height="58.6dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="128dp"
-                        android:layout_marginLeft="127dp"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginEnd="80dp"
-                        android:fontFamily="@font/joti_one"
-                        android:gravity="center"
-                        android:text="@string/dinelink_string"
-                        android:textColor="@color/dinelink_color"
-                        android:textSize="36sp" />
-
-                    <ImageView
-                        android:id="@+id/image_4"
-                        android:layout_width="50dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="98dp"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginEnd="274dp"
-                        android:contentDescription="image_4"
-                        android:src="@drawable/image_4" />
+        </TextView>
 
 
-                    <TextView
-                        android:id="@+id/restaurant_login"
-                        android:layout_width="284dp"
-                        android:layout_height="49.8dp"
-                        android:layout_below="@+id/dinelink"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="41dp"
-                        android:layout_marginLeft="37dp"
-                        android:layout_marginTop="107dp"
-                        android:layout_marginEnd="47dp"
-                        android:fontFamily="@font/sahitya"
-                        android:gravity="center"
-                        android:text="@string/costomer_login"
-                        android:textColor="@color/dinelink_color"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/image_1"
-                        android:layout_width="10dp"
-                        android:layout_height="36dp"
-                        android:layout_alignStart="@+id/btn_signin_with_google"
-                        android:layout_alignEnd="@+id/btn_signin_with_google"
-                        android:layout_marginStart="-19dp"
-                        android:layout_marginTop="303dp"
-                        android:layout_marginEnd="225dp"
-                        android:contentDescription="logo_google.png"
-                        android:src="@drawable/logo_google"
-                        android:onClick="SignIn_With_Google"/>
-
-                    <TextView
-                        android:id="@+id/sign_in_with_google"
-                        android:layout_width="180dp"
-                        android:layout_height="49.6dp"
-                        android:layout_alignStart="@+id/btn_signin_with_google"
-                        android:layout_alignTop="@+id/btn_signin_with_google"
-                        android:layout_alignEnd="@+id/btn_signin_with_google"
-                        android:layout_alignBottom="@+id/btn_signin_with_google"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="55dp"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginBottom="9dp"
-                        android:fontFamily="@font/sahitya"
-                        android:gravity="center"
-                        android:text="@string/sign_in_with_google"
-                        android:textColor="@color/dinelink_color"
-                        android:textSize="26sp"
-                        android:onClick="SignIn_With_Google"/>
-
-
-                    <TextView
-                        android:id="@+id/__food_is_love_served_on_a_plate__"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_gravity="center_horizontal|center"
-                        android:layout_marginStart="63dp"
-                        android:layout_marginTop="594dp"
-                        android:layout_marginEnd="63dp"
-                        android:fontFamily="@font/itim"
-                        android:gravity="center"
-                        android:text="@string/cusromer_login_text"
-                        android:textColor="@color/dinelink_color"
-                        android:textSize="25sp" />
-
-                </RelativeLayout>
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -178,7 +178,8 @@
 					android:padding="8sp"
 					android:text="@string/checkout_string"
 					android:textColor="@color/black"
-					android:textSize="15sp" />
+					android:textSize="15sp"
+					/>
 
 
 			</LinearLayout>

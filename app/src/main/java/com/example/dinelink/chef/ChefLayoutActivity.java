@@ -1,6 +1,7 @@
 
 package com.example.dinelink.chef;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -21,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-    public class ChefLayoutActivity extends AppCompatActivity {
+    public class ChefLayoutActivity extends Activity {
 
 
 	ListView chefOrderListView;

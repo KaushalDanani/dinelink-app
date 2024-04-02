@@ -1,55 +1,56 @@
 <resources>
-	<!-- menu strings -->
+    <!-- menu strings -->
 
-	<string name="app_name">DineLink</string>
-	<string name="ek_img_content">ExportKit Image</string>
-	<string name="search_item_string">search item</string>
-	<string name="filters_string">Filters</string>
-	<string name="paneer_butter_masala_string">Paneer Butter Masala</string>
-	<string name="__160_string">160</string>
-	<string name="red_brown_gravy_with_tomatoes_and_onion_string">Red-brown gravy with tomatoes and onion</string>
-	<string name="___1___string">  -      1     +</string>
-	<string name="paneer_butter_masala_ek1_string">Paneer Butter Masala</string>
-	<string name="__160_ek1_string">160</string>
-	<string name="red_brown_gravy_with_tomatoes_and_onion_ek1_string">Red-brown gravy with tomatoes and onion</string>
-	<string name="add___string">ADD +</string>
-	<string name="all_string">All</string>
-	<string name="starters_string">Starters</string>
-	<string name="breads_string">Breads</string>
-	<string name="gravies_string">Gravies</string>
-	<string name="checkout_string">checkout</string>
-	<string name="_2_items_added_string">0 items selected</string>
+    <string name="app_name">DineLink</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="search_item_string">search item</string>
+    <string name="filters_string">Filters</string>
+    <string name="paneer_butter_masala_string">Paneer Butter Masala</string>
+    <string name="__160_string">160</string>
+    <string name="red_brown_gravy_with_tomatoes_and_onion_string">Red-brown gravy with tomatoes and onion</string>
+    <string name="___1___string">  -      1     +</string>
+    <string name="paneer_butter_masala_ek1_string">Paneer Butter Masala</string>
+    <string name="__160_ek1_string">160</string>
+    <string name="red_brown_gravy_with_tomatoes_and_onion_ek1_string">Red-brown gravy with tomatoes and onion</string>
+    <string name="add___string">ADD +</string>
+    <string name="all_string">All</string>
+    <string name="starters_string">Starters</string>
+    <string name="breads_string">Breads</string>
+    <string name="gravies_string">Gravies</string>
+    <string name="checkout_string">checkout</string>
+    <string name="_2_items_added_string">0 items selected</string>
 
-	<!-- chef strings -->
+    <!-- chef strings -->
 
-	<string name="new_orders_string">New orders</string>
-	<string name="pending_orders_string">Pending orders</string>
-	<string name="order_information_string">Order information</string>
-	<string name="table_no__2_string">Table No. 2 </string>
-	<string name="hide_order_string">hide order</string>
-	<string name="table_no__3_string">Table No. 3 </string>
-	<string name="view_order_string">view order</string>
-	<string name="reject_string">Reject</string>
-	<string name="accept_string">Accept</string>
-	<string name="reject_ek1_string">Reject</string>
-	<string name="accept_ek1_string">Accept</string>
-	<string name="_2_string">2</string>
-	<string name="item_string">Item</string>
-	<string name="butter_roti_string">Butter Roti</string>
-	<string name="_4_string">4</string>
-	<string name="qty_string">Qty</string>
+    <string name="new_orders_string">New orders</string>
+    <string name="pending_orders_string">Pending orders</string>
+    <string name="order_information_string">Order information</string>
+    <string name="table_no__2_string">Table No. 2 </string>
+    <string name="hide_order_string">hide order</string>
+    <string name="table_no__3_string">Table No. 3 </string>
+    <string name="view_order_string">view order</string>
+    <string name="reject_string">Reject</string>
+    <string name="accept_string">Accept</string>
+    <string name="reject_ek1_string">Reject</string>
+    <string name="accept_ek1_string">Accept</string>
+    <string name="_2_string">2</string>
+    <string name="item_string">Item</string>
+    <string name="butter_roti_string">Butter Roti</string>
+    <string name="_4_string">4</string>
+    <string name="qty_string">Qty</string>
     <!-- android_large___24 strings -->
 
     <string name="dinelink_string">DineLink</string>
     <string name="choose_your_role_string">CHOOSE YOUR ROLE</string>
     <string name="food_provider_string">Food Provider</string>
     <string name="i_m_hungry_string">Im Hungry</string>
-    <string name="__food_is_love_served_on_a_plate___string">"Food is love served on a plate."</string>
+    <string name="__food_is_love_served_on_a_plate___string">&quot;Food is love served on a plate.&quot;</string>
     <string name="costomer_login">CUSTOMER LOGIN</string>
     <string name="sign_in_with_google">Sign In With Google</string>
-    <string name="cusromer_login_text">Savor flavoes, induge senses, create cherished moments.</string>
+    <string name="cusromer_login_text">&quot;Savor flavoes, induge senses, create cherished moments.&quot;</string>
     <string name="rastaurant_login">RESTAURANT LOGIN</string>
     <string name="rasturant_login">RESTAURANT LOGIN</string>
-    <string name="restaurant_login_text">The fondest memories are made when gathered around the table.</string>
+    <string name="restaurant_login_text">&quot;The fondest memories are made when gathered around the table.&quot;</string>
     <string name="Login">Login</string>
+    <string name="restaurant_id">Restaurant ID</string>
 </resources>

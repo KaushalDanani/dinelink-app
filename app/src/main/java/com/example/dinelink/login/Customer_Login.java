@@ -55,7 +55,9 @@ public class Customer_Login extends Activity {
 
     }
 
+
     public void SignIn_With_Google (View view) {
+
 
         oneTapClient.beginSignIn(signInRequest)
                 .addOnSuccessListener(this, new OnSuccessListener<BeginSignInResult>() {

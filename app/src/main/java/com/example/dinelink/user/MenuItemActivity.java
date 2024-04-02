@@ -2,6 +2,7 @@
 package com.example.dinelink.user;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,9 +41,9 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 
 	private LinearLayout ll;
 	private Button foodItemCheckoutBtn;
-	private RecyclerView categoriesView;
-	private ListView foodItemList;
-	private TextView menuItemsSelectedView;
+	RecyclerView categoriesView;
+	ListView foodItemList;
+	TextView menuItemsSelectedView;
 	CategoriesAdapter mAdapter;
 	MenuAdapter menuAdapter;
 	List<FoodItem> foodList = new ArrayList<>();
@@ -52,6 +54,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 	List<FoodItem> orderedItems = new ArrayList<>();
 	private int hotelId;
 
+	String selectedCategory;
 
 		@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,12 +69,16 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 
-			hotelId = getIntent().getIntExtra("HOTEL_ID",1);
+//		hotelId = getIntent().getIntExtra("HOTEL_ID",1);
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MenuItemActivity.this, "Pressed filter", Toast.LENGTH_SHORT).show();
+
+				MenuFilterBottomSheetFragment bottomSheetFragment = new MenuFilterBottomSheetFragment(MenuItemActivity.this);
+				bottomSheetFragment.show();
+
+
 			}
 		});
 
@@ -98,6 +105,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		});
 
 
+			int hotelId = 1;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)
@@ -117,15 +125,17 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 							mAdapter = new CategoriesAdapter(MenuItemActivity.this,categoryList, MenuItemActivity.this);
 							categoriesView.setAdapter(mAdapter);
 
-							String category = categoryList.get(0);
+							selectedCategory = categoryList.get(0);
 							categoryItemList.clear();
 							for(FoodItem item : foodList)
 							{
-								if(item.getItemCategory().equals(category))
+								if(item.getItemCategory().equals(selectedCategory))
 								{
 									categoryItemList.add(item);
 								}
 							}
+
+
 							MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
 							foodItemList.setAdapter(mad);
 
@@ -143,19 +153,22 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		public void onButtonClick(int position, Button categoryItemButton) {
 
 			mAdapter.notifyDataSetChanged();
-			String category = categoryList.get(position);
+			selectedCategory = categoryList.get(position);
 
 			categoryItemList.clear();
 			for(FoodItem item : foodList)
 			{
-				if(item.getItemCategory().equals(category))
+				if(item.getItemCategory().equals(selectedCategory))
 				{
 					categoryItemList.add(item);
 				}
 			}
+
 			MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
 			foodItemList.setAdapter(mad);
+
 		}
+
 	}
 
 
