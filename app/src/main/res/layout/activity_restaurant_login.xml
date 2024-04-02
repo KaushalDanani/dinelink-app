@@ -2,283 +2,197 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/restaurantloginpage"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.Restaurant_Login">
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dinelink_mainbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <RelativeLayout
-        android:id="@+id/page_android_large___24_ek1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="0dp">
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <View
-            android:id="@+id/_bg__android_large___24_ek2"
+
+        <LinearLayout
+            android:id="@+id/dinelink_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/_bg__android_large___24_ek2_shape" />
-
-        <ImageView
-            android:id="@+id/burger_1"
-            android:layout_width="214dp"
-            android:layout_height="245dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="208dp"
-            android:layout_marginTop="366dp"
-            android:layout_marginEnd="1dp"
-            android:contentDescription="burger_1"
-            android:src="@drawable/burger_1" />
-
-        <ImageView
-            android:id="@+id/donut_1"
-            android:layout_width="74dp"
-            android:layout_height="178dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="-60dp"
-            android:layout_marginTop="315dp"
-            android:layout_marginEnd="334dp"
-            android:contentDescription="donut_1"
-            android:src="@drawable/donut_1" />
-
-        <ImageView
-            android:id="@+id/buritto_1"
-            android:layout_width="85dp"
-            android:layout_height="123dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="319dp"
-            android:layout_marginTop="141dp"
-            android:layout_marginEnd="19dp"
-            android:contentDescription="buritto_1"
-            android:src="@drawable/buritto_1" />
-
-        <ImageView
-            android:id="@+id/fries_1"
-            android:layout_width="122dp"
-            android:layout_height="91dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="257dp"
-            android:layout_marginTop="730dp"
-            android:layout_marginEnd="-4dp"
-            android:contentDescription="fries_1"
-            android:src="@drawable/fries_1" />
-
-        <ImageView
-            android:id="@+id/ellipse_127"
-            android:layout_width="152.5dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:contentDescription="ellipse_127"
-            android:src="@drawable/ellipse_127" />
-
-        <ImageView
-            android:id="@+id/indian_thali_food_removebg_preview_1"
-            android:layout_width="181dp"
-            android:layout_height="168dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="-48dp"
-            android:layout_marginTop="659dp"
-            android:layout_marginEnd="250dp"
-            android:contentDescription="indian_thali_food_removebg_preview_1"
-            android:src="@drawable/indian_thali_food_removebg_preview_1" />
-
-        <View
-            android:id="@+id/ellipse_128"
-            android:layout_width="181dp"
-            android:layout_height="181dp"
-            android:layout_marginStart="230dp"
-            android:layout_marginTop="-110dp"
-            android:alpha="0.20999999344349"
-            android:background="@drawable/ellipse_128_shape" />
-
-        <View
-            android:id="@+id/ellipse_129"
-            android:layout_width="173dp"
-            android:layout_height="161dp"
-            android:layout_marginStart="-109dp"
-            android:layout_marginTop="-25dp"
-            android:background="@drawable/ellipse_129_shape" />
-
-        <View
-            android:id="@+id/ellipse_130"
-            android:layout_width="180dp"
-            android:layout_height="130dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="353dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="-53dp"
-            android:background="@drawable/ellipse_130_shape" />
-
-        <TextView
-            android:id="@+id/dinelink"
-            android:layout_width="165dp"
-            android:layout_height="58.6dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginStart="133dp"
-            android:layout_marginLeft="127dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="85dp"
-            android:fontFamily="@font/joti_one"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
             android:gravity="center"
-            android:text="@string/dinelink_string"
-            android:textColor="@color/dinelink_color"
-            android:textSize="36sp" />
+            android:orientation="horizontal"
+            android:paddingHorizontal="55dp">
 
-        <ImageView
-            android:id="@+id/image_4"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="274dp"
-            android:contentDescription="image_4"
-            android:src="@drawable/image_4" />
+            <!-- ImageView -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_4" />
+
+            <!-- Space view to create dynamic space -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/joti_one"
+                android:text="Dine Link"
+                android:textSize="40sp"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
 
 
         <TextView
-            android:id="@+id/restaurant_login"
-            android:layout_width="284dp"
-            android:layout_height="49.8dp"
-            android:layout_below="@+id/dinelink"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="109dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:fontFamily="@font/sahitya"
             android:gravity="center"
-            android:text="@string/rastaurant_login"
-            android:textColor="@color/dinelink_color"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:paddingHorizontal="7dp"
+            android:text="RESTAURANT LOGIN"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="#000000">
 
-        <TextView
-            android:id="@+id/__food_is_love_served_on_a_plate__"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center_horizontal|center"
-            android:layout_marginStart="63dp"
-            android:layout_marginTop="594dp"
-            android:layout_marginEnd="63dp"
-            android:fontFamily="@font/itim"
-            android:gravity="center"
-            android:text="@string/restaurant_login_text"
-            android:textColor="@color/dinelink_color"
-            android:textSize="25sp" />
+        </TextView>
 
-        <EditText
-            android:id="@+id/editTextText2"
+        <LinearLayout
+            android:id="@+id/dinelink_hotel_role"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="57dp"
-            android:layout_marginTop="275dp"
-            android:layout_marginEnd="59dp"
-            android:background="@drawable/rectangle"
-            android:ems="10"
-            android:fontFamily="@font/salsa"
-            android:hint="Restaurant ID"
-            android:inputType="text"
-            android:paddingStart="90dp"
-            android:paddingEnd="20dp"
-            android:textSize="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/editTextText2"
-            android:layout_alignBottom="@+id/editTextText2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="89dp"
-            android:layout_marginTop="293dp"
-            android:layout_marginEnd="227dp"
-            android:layout_marginBottom="19dp"
-            app:srcCompat="@drawable/restaurant_icon" />
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/black_border_for_hotel_login"
+            android:gravity="center"
+            android:onClick="restaurantLogin"
+            android:orientation="horizontal"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="5dp">
 
-        <EditText
-            android:id="@+id/editTextTextPassword2"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginHorizontal="57dp"
-            android:layout_marginTop="357dp"
-            android:background="@drawable/rectangle"
-            android:ems="10"
-            android:fontFamily="@font/salsa"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingStart="90dp"
-            android:paddingEnd="20dp"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <!-- ImageView -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/restaurant_icon" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+            <!-- Space view to create dynamic space -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- TextView -->
+            <EditText
+                android:id="@+id/restaurant_id"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/restaurant_id"
+                android:textSize="25sp"
+                android:inputType="number"
+                android:fontFamily="@font/salsa"
+                android:textColor="#000000"
+                >
+
+            </EditText>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dinelink_customer_role"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="93dp"
-            android:layout_marginBottom="416dp"
-            app:srcCompat="@drawable/password_icon" />
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/black_border_for_hotel_login"
+            android:gravity="center"
+            android:onClick="customerLogin"
+            android:orientation="horizontal"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="5dp">
+
+
+            <!-- ImageView -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/password_icon" />
+
+            <!-- Space view to create dynamic space -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- TextView -->
+            <EditText
+                android:id="@+id/restaurant_password"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textSize="25sp"
+                android:inputType="text"
+                android:fontFamily="@font/salsa"
+                android:textColor="#000000"
+                >
+
+            </EditText>
+
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/restaurant_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/sahitya"
+            android:text="@string/Login"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/red_color_bg"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginStart="66dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginBottom="296dp"
-            android:backgroundTint="#FF0000"
-            android:fontFamily="@font/sahitya"
-            android:padding="8dp"
-            android:paddingHorizontal="0dp"
-            android:paddingVertical="100dp"
-            android:shadowColor="#B72A2A"
-            android:text="@string/Login"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#911B1B"
-            android:textColorLink="#FF0000"
-            android:textSize="25sp" />
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/itim"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:text="@string/restaurant_login_text"
+            android:textSize="25dp"
+            android:textColor="#000000">
 
-    </RelativeLayout>
+        </TextView>
 
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

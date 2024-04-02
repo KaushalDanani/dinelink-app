@@ -44,12 +44,13 @@
     <string name="choose_your_role_string">CHOOSE YOUR ROLE</string>
     <string name="food_provider_string">Food Provider</string>
     <string name="i_m_hungry_string">Im Hungry</string>
-    <string name="__food_is_love_served_on_a_plate___string">"Food is love served on a plate."</string>
+    <string name="__food_is_love_served_on_a_plate___string">&quot;Food is love served on a plate.&quot;</string>
     <string name="costomer_login">CUSTOMER LOGIN</string>
     <string name="sign_in_with_google">Sign In With Google</string>
-    <string name="cusromer_login_text">Savor flavoes, induge senses, create cherished moments.</string>
+    <string name="cusromer_login_text">&quot;Savor flavoes, induge senses, create cherished moments.&quot;</string>
     <string name="rastaurant_login">RESTAURANT LOGIN</string>
     <string name="rasturant_login">RESTAURANT LOGIN</string>
-    <string name="restaurant_login_text">The fondest memories are made when gathered around the table.</string>
+    <string name="restaurant_login_text">&quot;The fondest memories are made when gathered around the table.&quot;</string>
     <string name="Login">Login</string>
+    <string name="restaurant_id">Restaurant ID</string>
 </resources>
