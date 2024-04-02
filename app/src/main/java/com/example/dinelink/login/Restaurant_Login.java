@@ -48,9 +48,9 @@ public class Restaurant_Login extends AppCompatActivity {
     }
 
     public void initializeComponent(){
-        EditText input_hotel_id = findViewById(R.id.editTextText2);
-        EditText input_hotel_password = findViewById(R.id.editTextTextPassword2);
-        Button login = findViewById(R.id.button);
+        EditText input_hotel_id = findViewById(R.id.restaurant_id);
+        EditText input_hotel_password = findViewById(R.id.restaurant_password);
+        Button login = findViewById(R.id.restaurant_login);
 
         RetrofitService retrofitService = new RetrofitService();
         HotelApi hotelApi = retrofitService.getRetrofit().create(HotelApi.class);
@@ -68,7 +68,7 @@ public class Restaurant_Login extends AppCompatActivity {
                         int flag = 0;
 
                         for (Hotel h : allHotel) {
-                            if(h.getHotel_id().equals(hotel_id) && h.getHote_password().equals(hotel_password)){
+                            if((h.getHotel_id()+"").equals(hotel_id) && h.getHote_password().equals(hotel_password)){
                                 flag = 1;
                                 break;
                             }
@@ -94,6 +94,7 @@ public class Restaurant_Login extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<List<Hotel>> call, Throwable t) {
                     // Handle network call failure
+                    System.out.println(t.getMessage());
                     Toast.makeText(Restaurant_Login.this,"Network Error",Toast.LENGTH_SHORT).show();
                 }
             });
