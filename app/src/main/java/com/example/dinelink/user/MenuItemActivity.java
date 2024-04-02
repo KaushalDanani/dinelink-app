@@ -88,7 +88,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 				}
 
 				System.out.println("asdf "+orderedItems.size());
-				Intent ii = new Intent(MenuItemActivity.this, ChefLayoutActivity.class);
+				Intent ii = new Intent(MenuItemActivity.this, Confirm_Order.class);
 				Bundle bb = new Bundle();
 				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
 				ii.putExtras(bb);
@@ -98,7 +98,6 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		});
 
 
-//			int hotelId = 1;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)
@@ -127,8 +126,6 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 									categoryItemList.add(item);
 								}
 							}
-
-
 							MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
 							foodItemList.setAdapter(mad);
 
@@ -156,12 +153,9 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 					categoryItemList.add(item);
 				}
 			}
-
 			MenuAdapter mad = new MenuAdapter(MenuItemActivity.this,R.layout.menu_item_card_layout,categoryItemList,menuItemsSelectedView);
 			foodItemList.setAdapter(mad);
-
 		}
-
 	}
 
 
