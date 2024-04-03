@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/joti_one"
                 android:text="DineLink"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textColor="#000000"
                 android:paddingHorizontal="10dp"/>
 
@@ -69,11 +69,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:fontFamily="@font/sahitya"
             android:gravity="center"
             android:text="CHOOSE YOUR ROLE"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#000000">
 
@@ -112,7 +112,7 @@
                 android:fontFamily="@font/sahitya"
                 android:text="Food Provider"
                 android:textColor="#000000"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="10dp"/>
 
@@ -149,9 +149,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/sahitya"
                 android:text="I'm Hungry"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textColor="#000000"
-                android:paddingHorizontal="20dp"
+                android:paddingHorizontal="33dp"
                 android:paddingVertical="10dp"/>
 
         </LinearLayout>
@@ -159,12 +159,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="120dp"
             android:fontFamily="@font/itim"
             android:gravity="center"
-            android:paddingHorizontal="40dp"
+            android:paddingHorizontal="60dp"
             android:text="@string/__food_is_love_served_on_a_plate___string"
-            android:textSize="32dp"
+            android:textSize="25dp"
             android:textColor="#000000">
 
         </TextView>
