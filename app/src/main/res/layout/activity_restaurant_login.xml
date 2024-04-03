@@ -21,32 +21,28 @@
 
     <LinearLayout
         android:id="@+id/contentLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="35dp"
-        app:layout_constraintBottom_toBottomOf="@+id/backgroundImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal"
         app:layout_constraintVertical_bias="0.0">
 
 
         <LinearLayout
             android:id="@+id/dinelink_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="55dp">
+            >
 
             <!-- ImageView -->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_4" />
+                android:src="@drawable/image_4"
+                android:paddingHorizontal="10dp"/>
 
             <!-- Space view to create dynamic space -->
             <Space
@@ -59,9 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/joti_one"
-                android:text="Dine Link"
+                android:text="DineLink"
                 android:textSize="40sp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:paddingHorizontal="10dp"/>
 
         </LinearLayout>
 
@@ -72,7 +69,6 @@
             android:layout_marginTop="100dp"
             android:fontFamily="@font/sahitya"
             android:gravity="center"
-            android:paddingHorizontal="7dp"
             android:text="RESTAURANT LOGIN"
             android:textSize="35dp"
             android:textStyle="bold"
@@ -82,22 +78,20 @@
 
         <LinearLayout
             android:id="@+id/dinelink_hotel_role"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/black_border_for_hotel_login"
             android:gravity="center"
             android:onClick="restaurantLogin"
-            android:orientation="horizontal"
-            android:paddingHorizontal="25dp"
-            android:paddingVertical="5dp">
+            android:orientation="horizontal">
 
             <!-- ImageView -->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/restaurant_icon" />
+                android:src="@drawable/restaurant_icon"
+                android:layout_marginStart="20dp"/>
 
             <!-- Space view to create dynamic space -->
             <Space
@@ -108,13 +102,16 @@
             <!-- TextView -->
             <EditText
                 android:id="@+id/restaurant_id"
-                android:layout_width="180dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/restaurant_id"
                 android:textSize="25sp"
                 android:inputType="number"
                 android:fontFamily="@font/salsa"
                 android:textColor="#000000"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginVertical="20dp"
+                android:background="@android:color/transparent"
                 >
 
             </EditText>
@@ -124,23 +121,21 @@
 
         <LinearLayout
             android:id="@+id/dinelink_customer_role"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/black_border_for_hotel_login"
             android:gravity="center"
             android:onClick="customerLogin"
-            android:orientation="horizontal"
-            android:paddingHorizontal="30dp"
-            android:paddingVertical="5dp">
+            android:orientation="horizontal">
 
 
             <!-- ImageView -->
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/password_icon" />
+                android:src="@drawable/password_icon"
+                android:layout_marginStart="20dp"/>
 
             <!-- Space view to create dynamic space -->
             <Space
@@ -151,13 +146,18 @@
             <!-- TextView -->
             <EditText
                 android:id="@+id/restaurant_password"
-                android:layout_width="180dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:textSize="25sp"
                 android:inputType="text"
                 android:fontFamily="@font/salsa"
                 android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="85dp"
+                android:layout_marginVertical="20dp"
+                android:background="@android:color/transparent"
+
                 >
 
             </EditText>
@@ -167,15 +167,15 @@
 
         <Button
             android:id="@+id/restaurant_login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="25dp"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/sahitya"
             android:text="@string/Login"
             android:textSize="30sp"
             android:textColor="#FFFFFF"
-            android:background="@drawable/red_color_bg"/>
+            android:background="@drawable/red_color_bg"
+            android:paddingHorizontal="100dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/itim"
             android:gravity="center"
-            android:paddingHorizontal="20dp"
+            android:paddingHorizontal="50dp"
             android:text="@string/restaurant_login_text"
             android:textSize="25dp"
             android:textColor="#000000">
