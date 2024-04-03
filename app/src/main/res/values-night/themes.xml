@@ -3,6 +3,7 @@
     <style name="Base.Theme.DineLink" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor" tools:targetApi="1">#FF0000</item>
     </style>
 
     <style name="Theme.DineLink" parent="Base.Theme.DineLink" />

@@ -96,7 +96,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 				}
 
 				System.out.println("asdf "+orderedItems.size());
-				Intent ii = new Intent(MenuItemActivity.this, ChefLayoutActivity.class);
+				Intent ii = new Intent(MenuItemActivity.this, Confirm_Order.class);
 				Bundle bb = new Bundle();
 				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
 				ii.putExtras(bb);

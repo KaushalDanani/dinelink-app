@@ -41,8 +41,6 @@
             android:name=".login.LoginRolePage"
             android:exported="false">
 
-
-
         </activity>
 
         <activity
@@ -59,7 +57,7 @@
 
         <activity
             android:name=".chef.ChefLayoutActivity"
-            android:exported="true" >
+            android:exported="false" >
 
 
         </activity>
@@ -70,7 +68,9 @@
 
         <activity
             android:name=".user.Confirm_Order"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
 
     </application>
 
