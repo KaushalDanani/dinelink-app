@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class Confirm_Order extends Activity {
     TextView Time,TotalAmount,GSTAmount,GrandTotalAmount;
     ListView orderView;
     List<FoodItem> orderList;
+    Button confirmOrderBtn;
     private final DecimalFormat df = new DecimalFormat("0.00");
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
@@ -33,9 +36,10 @@ public class Confirm_Order extends Activity {
         TotalAmount = findViewById(R.id.TotalAmount);
         GSTAmount = findViewById(R.id.GSTAmount);
         GrandTotalAmount = findViewById(R.id.GrandTotalAmount);
+        confirmOrderBtn = findViewById(R.id.confirmOrderBtn);
         Time = findViewById(R.id.Time);
+
         LocalTime t = LocalTime.now();
-        String label = "Time: ";
         String colon = ":";
         Time.setText(":  "+t.getHour()+colon+t.getMinute());
 
@@ -43,6 +47,13 @@ public class Confirm_Order extends Activity {
         OrderListAdapter oa = new OrderListAdapter(this,R.layout.order_list_layout,this.orderList);
         orderView.setAdapter(oa);
         countTotal();
+
+        confirmOrderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 //    protected void generateOrderList(){

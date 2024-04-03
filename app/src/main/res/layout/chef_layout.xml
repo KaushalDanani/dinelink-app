@@ -2,7 +2,40 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:weightSum="300">
+	android:weightSum="301">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="75dp"
+		android:padding="10dp"
+		android:orientation="horizontal"
+		android:weightSum="7"
+		android:layout_weight="1"
+		android:background="#D60000">
+
+		<Space
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="2" />
+
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="50dp"
+			android:layout_weight="2"
+			android:src="@drawable/dine_link_tp_logo_white"
+			android:layout_gravity="center_vertical|center_horizontal" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="3"
+			android:fontFamily="@font/rye_regular"
+			android:gravity="left"
+			android:text="DineLink"
+			android:layout_gravity="center_vertical"
+			android:textColor="@color/white"
+			android:textSize="34sp" />
+	</LinearLayout>
 
 	<TextView
 		android:layout_width="match_parent"
@@ -10,6 +43,7 @@
 		android:layout_weight="30"
 		android:text="Pending orders"
 		android:textStyle="bold"
+		android:gravity="center"
 		android:textSize="28sp"
 		android:textColor="@color/black"
 		android:padding="10sp"/>
@@ -26,15 +60,12 @@
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:layout_weight="269"
-		>
+		android:layout_weight="270">
 
 		<ListView
 			android:id="@+id/chefOrderListView"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">
-
-
 
 		</ListView>
 
