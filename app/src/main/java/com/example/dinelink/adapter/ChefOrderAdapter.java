@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import com.example.dinelink.R;
 import com.example.dinelink.model.OrderItem;
 import com.example.dinelink.model.Orders;
+import com.example.dinelink.retrofit.OrderApi;
 import com.example.dinelink.retrofit.OrderItemApi;
 import com.example.dinelink.retrofit.RetrofitService;
 
@@ -73,7 +74,7 @@ public class ChefOrderAdapter extends ArrayAdapter<Orders> {
         orderCompleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                removeOrder(position);
+                removeOrder(position,order);
             }
         });
 
@@ -99,8 +100,38 @@ public class ChefOrderAdapter extends ArrayAdapter<Orders> {
     }
 
     // Method to remove order from the list
-    private void removeOrder(int position) {
+    private void removeOrder(int position,Orders order) {
         orderList.remove(position);
+        RetrofitService retrofitService = new RetrofitService();
+        OrderApi orderApi = retrofitService.getRetrofit().create(OrderApi.class);
+        orderApi.removeOrder(order.getOrderId())
+                        .enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                Toast.makeText(context, "order removed", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+                                Toast.makeText(context, "order not removed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+        OrderItemApi orderItemApi1 = retrofitService.getRetrofit().create(OrderItemApi.class);
+        orderItemApi1.removeOrderItems(order.getOrderId())
+                        .enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                Toast.makeText(context, "order Items removed", Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+                                Toast.makeText(context, "order Items not removed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
         notifyDataSetChanged();
     }
 

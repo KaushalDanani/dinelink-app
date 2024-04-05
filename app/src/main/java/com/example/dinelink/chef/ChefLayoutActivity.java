@@ -17,6 +17,7 @@ import com.example.dinelink.R;
 import com.example.dinelink.adapter.ChefOrderAdapter;
 import com.example.dinelink.model.FoodItem;
 import com.example.dinelink.model.Orders;
+import com.example.dinelink.retrofit.HotelApi;
 import com.example.dinelink.retrofit.OrderApi;
 import com.example.dinelink.retrofit.RetrofitService;
 
@@ -40,6 +41,7 @@ import android.widget.Toast;
 	ListView chefOrderListView;
 
 	private List<Orders> orderList;
+	int hotelId=1;
 
 
 	@Override
@@ -50,9 +52,8 @@ import android.widget.Toast;
 
 		chefOrderListView = findViewById(R.id.chefOrderListView);
 
-		SocketProgramming sp = new SocketProgramming(this);
+		SocketProgramming sp = new SocketProgramming(this,hotelId);
 		
-		int hotelId=1;
 
 //		Intent i1 = getIntent();
 //		List<FoodItem> orderedItems = i1.getExtras().getParcelableArrayList("items");
@@ -92,9 +93,11 @@ class SocketProgramming implements Runnable {
 	Thread th;
 	ChefLayoutActivity chefLayoutActivity;
 	Handler handler;
+	int hotelId;
 
-	SocketProgramming(ChefLayoutActivity chefLayoutActivity) {
+	SocketProgramming(ChefLayoutActivity chefLayoutActivity,int hotelId) {
 		this.chefLayoutActivity = chefLayoutActivity;
+		this.hotelId=hotelId;
 		th = new Thread(this);
 		handler = new Handler(chefLayoutActivity.getMainLooper()); // Create a handler for the main UI thread
 		System.out.println("CONS");
@@ -107,6 +110,31 @@ class SocketProgramming implements Runnable {
 			ServerSocket ss = new ServerSocket(8388);
 			WifiManager wifiManager = (WifiManager) chefLayoutActivity.getApplicationContext().getSystemService(WIFI_SERVICE);
 			String ipAddress = Formatter.formatIpAddress(wifiManager.getConnectionInfo().getIpAddress());
+
+			RetrofitService retrofitService = new RetrofitService();
+			HotelApi hotelApi = retrofitService.getRetrofit().create(HotelApi.class);
+			hotelApi.setIp(ipAddress,hotelId)
+					.enqueue(new Callback<Void>() {
+						@Override
+						public void onResponse(Call<Void> call, Response<Void> response) {
+							handler.post(new Runnable() { // Post a Runnable to the main UI thread
+								@Override
+								public void run() {
+									Toast.makeText(chefLayoutActivity, "IP Address stored", Toast.LENGTH_SHORT).show();
+								}
+							});
+						}
+
+						@Override
+						public void onFailure(Call<Void> call, Throwable t) {
+							handler.post(new Runnable() { // Post a Runnable to the main UI thread
+								@Override
+								public void run() {
+									Toast.makeText(chefLayoutActivity, "IP Address update failed", Toast.LENGTH_SHORT).show();
+								}
+							});
+						}
+					});
 
 
 			while (true) {

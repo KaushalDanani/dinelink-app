@@ -12,4 +12,7 @@ public interface OrderApi {
 
     @GET("/orders/")
     Call<List<Orders>> getOrders(@Query("hotelId")int hotelId);
+
+    @GET("/orders/remove/")
+    Call<Void> removeOrder(@Query("orderId")int orderId);
 }
