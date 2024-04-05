@@ -2,7 +2,9 @@ package com.dinelink.backend.model.hotel;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,11 @@ public class HotelDao {
         List<Hotel> hotel = new ArrayList<>();
         Streamable.of(repository.findAll()).forEach(hotel::add);
         return hotel;
+    }
+
+    public void setIp(String hotel_ip,
+                      int hotel_id) {
+        repository.setIp(hotel_ip,hotel_id);
     }
 
 }

@@ -74,6 +74,23 @@ class BackendApplicationTests {
 		FoodItem f22 = new FoodItem(22,7,"Margherita Pizza",249,"Fresh tomato sauce, mozzarella cheese, and basil leaves on a thin crust","Pizzas","");
 		FoodItem f23 = new FoodItem(23,7,"Vegetable Pad Thai",229,"Stir-fried rice noodles with tofu, bean sprouts, peanuts, and a tangy tamarind sauce","Noodles","");
 		FoodItem f24 = new FoodItem(24,7,"Cheesecake",199,"Creamy New York-style cheesecake with a graham cracker crust, topped with fresh berries","Desserts","");
+		FoodItem f25 = new FoodItem(25, 1, "Chicken Curry", 239, "Tender chicken pieces cooked in a flavorful curry sauce with onions, tomatoes, and spices", "Curries", "");
+		FoodItem f26 = new FoodItem(26, 1, "Beef Vindaloo", 259, "Tender beef chunks cooked in a spicy and tangy curry sauce with potatoes, vinegar, and spices", "Curries", "");
+		FoodItem f27 = new FoodItem(27, 1, "Egg Curry", 189, "Hard-boiled eggs cooked in a rich and aromatic tomato-based curry sauce with onions and spices", "Curries", "");
+		FoodItem f28 = new FoodItem(28, 1, "Fish Curry", 279, "Fresh fish fillets cooked in a tangy and flavorful curry sauce with coconut milk, tamarind, and spices", "Curries", "");
+		FoodItem f29 = new FoodItem(29, 1, "Mutton Rogan Josh", 299, "Tender mutton pieces cooked in a thick, aromatic gravy with yogurt, tomatoes, and spices", "Curries", "");
+		FoodItem f30 = new FoodItem(30, 1, "Vegetable Jalfrezi", 209, "Mixed vegetables stir-fried with onions, bell peppers, and tomatoes in a spicy and tangy curry sauce", "Curries", "");
+		FoodItem f31 = new FoodItem(31, 1, "Chana Masala", 199, "Chickpeas cooked in a spiced tomato-based curry sauce with onions, ginger, and garlic", "Curries", "");
+		FoodItem f32 = new FoodItem(32, 1, "Palak Paneer", 229, "Soft paneer cubes cooked in a creamy spinach gravy with garlic, onions, and spices", "Curries", "");
+		FoodItem f33 = new FoodItem(33, 1, "Goan Prawn Curry", 299, "Fresh prawns cooked in a coconut-based curry sauce with tomatoes, onions, and Goan spices", "Curries", "");
+		FoodItem f34 = new FoodItem(34, 1, "Lamb Curry", 269, "Tender lamb pieces cooked in a flavorful curry sauce with onions, tomatoes, and a blend of spices", "Curries", "");
+		FoodItem f35 = new FoodItem(35, 1, "Vegetable Biryani", 249, "Spiced rice cooked with mixed vegetables and aromatic spices", "Rice", "");
+		FoodItem f36 = new FoodItem(36, 1, "Chicken Fried Rice", 199, "Stir-fried rice with chicken, eggs, vegetables, and soy sauce", "Rice", "");
+		FoodItem f37 = new FoodItem(37, 1, "Paneer Pulao", 229, "Fragrant rice cooked with paneer cubes, spices, and herbs", "Rice", "");
+		FoodItem f38 = new FoodItem(38, 1, "Schezwan Fried Rice", 259, "Spicy fried rice with Schezwan sauce, mixed vegetables, and tofu or chicken", "Rice", "");
+		FoodItem f39 = new FoodItem(39, 1, "Lemon Rice", 179, "Tangy rice flavored with lemon juice, curry leaves, and peanuts", "Rice", "");
+
+
 
 //		mr.save(f1);
 //		mr.save(f2);
@@ -99,6 +116,21 @@ class BackendApplicationTests {
 		mr.save(f22);
 		mr.save(f23);
 		mr.save(f24);
+        mr.save(f25);
+		mr.save(f26);
+		mr.save(f27);
+		mr.save(f28);
+		mr.save(f29);
+		mr.save(f30);
+		mr.save(f31);
+		mr.save(f32);
+		mr.save(f33);
+		mr.save(f34);
+        mr.save(f35);
+        mr.save(f36);
+        mr.save(f37);
+        mr.save(f38);
+        mr.save(f39);
 	}
 
 	@Autowired

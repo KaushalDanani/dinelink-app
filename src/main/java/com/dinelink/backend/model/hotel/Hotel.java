@@ -18,6 +18,15 @@ public class Hotel {
     private int hotel_rating;
     private String hotel_link;
     private Blob hotel_image;
+    private String hotel_ip;
+
+    public String getHotel_ip() {
+        return hotel_ip;
+    }
+
+    public void setHotel_ip(String hotel_ip) {
+        this.hotel_ip = hotel_ip;
+    }
 
     public int getHotel_id() {
         return hotel_id;

@@ -24,4 +24,12 @@ public class OrderItemController {
         return orderItems;
     }
 
+    @GetMapping(value = "/remove/")
+    void  removeOrderItems(@RequestParam("orderId")int orderId)
+    {
+        ois.removeOrderItems(orderId);
+    }
+
+
+
 }

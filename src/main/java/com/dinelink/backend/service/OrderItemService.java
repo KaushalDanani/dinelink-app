@@ -18,4 +18,10 @@ public class OrderItemService {
 
         return orderItemList;
     }
+
+    public void removeOrderItems(@RequestParam("orderId")int orderId){
+        oir.deleteByOrderId(orderId);
+    }
+
+
 }
