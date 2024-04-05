@@ -4,8 +4,8 @@ public class QRCodeDecoder {
     int hotelId;
     int tableNo;
     QRCodeDecoder(){
-        this.tableNo = 0;
         this.hotelId = 0;
+        this.tableNo = 0;
     }
 
 }
