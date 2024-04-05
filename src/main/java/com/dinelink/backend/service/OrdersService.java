@@ -19,6 +19,9 @@ public class OrdersService {
         return orders;
     }
 
+    public int save(Orders order){
+        return or.save(order).getOrderId();
+    }
     public void removeOrder(@RequestParam("orderId")int orderId){
         or.deleteById(orderId);
     }
