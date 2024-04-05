@@ -55,5 +55,6 @@ dependencies {
     implementation libs.gms.play.services.auth
 
     implementation libs.checkout
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
