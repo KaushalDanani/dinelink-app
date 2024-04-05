@@ -42,9 +42,9 @@
 
             <!-- ImageView -->
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/image_4"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/dine_link_tp_logo_black"
                 android:paddingHorizontal="10dp"/>
 
             <!-- Space view to create dynamic space -->

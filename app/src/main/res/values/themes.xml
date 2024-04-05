@@ -3,7 +3,7 @@
     <style name="Base.Theme.DineLink" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:statusBarColor" tools:targetApi="1">@color/ellipse_128_color</item>
+        <item name="android:statusBarColor" tools:targetApi="1">#FF0000</item>
     </style>
 
 
