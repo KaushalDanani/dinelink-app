@@ -31,6 +31,7 @@ import com.example.dinelink.retrofit.RetrofitService;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import retrofit2.Call;
@@ -69,7 +70,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		menuItemsSelectedView=findViewById(R.id.menuItemsSelectedView);
 		foodItemCheckoutBtn = findViewById(R.id.foodItemCheckoutBtn);
 
-//		hotelId = getIntent().getIntExtra("HOTEL_ID",1);
+		hotelId = Objects.requireNonNull(getIntent().getExtras()).getInt("HOTEL_ID");
 
 		ll.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -95,7 +96,6 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 					}
 				}
 
-				System.out.println("asdf "+orderedItems.size());
 				Intent ii = new Intent(MenuItemActivity.this, Confirm_Order.class);
 				Bundle bb = new Bundle();
 				bb.putParcelableArrayList("items",new ArrayList<>(orderedItems));
@@ -106,7 +106,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		});
 
 
-			int hotelId = 1;
+//			int hotelId = 1;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)

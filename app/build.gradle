@@ -19,6 +19,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "CLIENT_ID", '"291779571169-vnipp7bnkgpe4ej2o5amtd11fiu3pf0e.apps.googleusercontent.com"')
+        buildConfigField("String", "PAYMENT_KEY_ID", '"rzp_test_GwJkretHqsmjIe"')
     }
 
     buildTypes {
@@ -45,14 +46,14 @@ dependencies {
 
     implementation libs.code.scanner
 
-
     implementation libs.googleid
     implementation libs.credentials
     implementation libs.credentials.play.services.auth
 
-
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.gms.play.services.auth
+
+    implementation libs.checkout
 
 }

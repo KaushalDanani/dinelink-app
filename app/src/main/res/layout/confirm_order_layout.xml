@@ -106,7 +106,7 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="450dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
@@ -117,7 +117,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
@@ -125,14 +125,13 @@
                 android:paddingRight="8dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:weightSum="10">
+                android:weightSum="12">
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
                     android:gravity="center"
                     android:paddingStart="7dp"
                     android:text="Item"
@@ -166,7 +165,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:gravity="center"
                     android:text="Total"
                     android:textColor="@color/black"
@@ -176,9 +175,9 @@
 
             <ListView
                 android:id="@+id/OrderView"
-                android:layout_weight="34"
+                android:layout_weight="46"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black" />
 
             <LinearLayout
@@ -188,7 +187,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="right"
                 android:orientation="vertical"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:weightSum="3"
                 app:layout_constraintBottom_toTopOf="@+id/confirmOrder"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -211,6 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="right"
+                        android:layout_gravity="center_vertical"
                         android:text="Total :"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -221,6 +221,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="right"
+                        android:layout_gravity="center_vertical"
                         android:text="TextView"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -241,7 +242,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="right"
-                        android:text="GST(5%):"
+                        android:layout_gravity="center_vertical"
+                        android:text="GST(5%) :"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -251,6 +253,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="right"
+                        android:layout_gravity="center_vertical"
                         android:text="TextView"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -272,7 +275,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:gravity="right"
-                        android:text="Grand Total:"
+                        android:layout_gravity="center_vertical"
+                        android:text="Grand Total :"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -282,6 +286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="right"
+                        android:layout_gravity="center_vertical"
                         android:text="TextView"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
