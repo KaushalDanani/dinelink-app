@@ -26,4 +26,9 @@ public class OrdersController {
     public int addOrder(@RequestBody Orders order){
         return os.save(order);
     }
+    @GetMapping(value = "/remove/")
+    public void removeOrder(@RequestParam("orderId")int orderId){
+        os.removeOrder(orderId);
+    }
+
 }
