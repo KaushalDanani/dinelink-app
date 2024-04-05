@@ -1,5 +1,6 @@
 package com.dinelink.backend;
 
+import com.dinelink.backend.model.FoodItem;
 import com.dinelink.backend.model.OrderItem;
 import com.dinelink.backend.model.Orders;
 import com.dinelink.backend.repository.FoodItemRepository;
@@ -47,8 +48,8 @@ class BackendApplicationTests {
 	@Autowired
 	FoodItemRepository mr;
 
-//	@Test
-//	void addFoodItems(){
+	@Test
+	void addFoodItems(){
 //		FoodItem f1 = new FoodItem(1,1,"Mojito",129,"Lime and mint essence","Beverages","");
 //		FoodItem f2 = new FoodItem(2,1,"Chicken Caesar Salad",199,"Fresh romaine lettuce, grilled chicken, parmesan cheese, and Caesar dressing","Salads","");
 //		FoodItem f3 = new FoodItem(3,2,"Margherita Pizza",299,"Fresh tomato sauce, mozzarella cheese, and basil leaves on a thin crust","Pizzas","");
@@ -69,7 +70,11 @@ class BackendApplicationTests {
 //		FoodItem f18 = new FoodItem(18,9,"Fish Tacos",279,"Grilled fish fillets served in warm tortillas with shredded cabbage, salsa, and avocado crema","Tacos","");
 //		FoodItem f19 = new FoodItem(19,10,"Mushroom Risotto",269,"Creamy risotto cooked with Arborio rice, mushrooms, onions, and white wine","Rice Dishes","");
 //		FoodItem f20 = new FoodItem(20,10,"Chicken Tikka Masala",359,"Tender pieces of chicken cooked in a flavorful tomato-based curry sauce with aromatic spices","Curries","");
-//
+		FoodItem f21 = new FoodItem(21,7,"Chicken Caesar Salad",159,"Fresh romaine lettuce, grilled chicken, parmesan cheese, and Caesar dressing","Salads","");
+		FoodItem f22 = new FoodItem(22,7,"Margherita Pizza",249,"Fresh tomato sauce, mozzarella cheese, and basil leaves on a thin crust","Pizzas","");
+		FoodItem f23 = new FoodItem(23,7,"Vegetable Pad Thai",229,"Stir-fried rice noodles with tofu, bean sprouts, peanuts, and a tangy tamarind sauce","Noodles","");
+		FoodItem f24 = new FoodItem(24,7,"Cheesecake",199,"Creamy New York-style cheesecake with a graham cracker crust, topped with fresh berries","Desserts","");
+
 //		mr.save(f1);
 //		mr.save(f2);
 //		mr.save(f3);
@@ -90,80 +95,84 @@ class BackendApplicationTests {
 //		mr.save(f18);
 //		mr.save(f19);
 //		mr.save(f20);
-//	}
+		mr.save(f21);
+		mr.save(f22);
+		mr.save(f23);
+		mr.save(f24);
+	}
 
 	@Autowired
 	OrdersRepository or;
-//	@Test
-//	void addOrders(){
-//		Orders o1 = new Orders(1,1,"abc123@gmail.com",new Date(),1,1000);
-//		Orders o2 = new Orders(2, 27, "user2@example.com", new Date(), 7, 2000);
-//		Orders o3 = new Orders(3, 1, "user3@example.com", new Date(), 8, 2000);
-//		Orders o4 = new Orders(4, 92, "user4@example.com", new Date(), 4, 2000);
-//		Orders o5 = new Orders(5, 1, "user5@example.com", new Date(), 3, 4000);
-//		Orders o6 = new Orders(6, 34, "user6@example.com", new Date(), 5, 4000);
-//		Orders o7 = new Orders(7, 73, "user7@example.com", new Date(), 7, 2000);
-//		Orders o8 = new Orders(8, 80, "user8@example.com", new Date(), 2, 1000);
-//		Orders o9 = new Orders(9, 38, "user9@example.com", new Date(), 9, 1000);
-//		Orders o10 = new Orders(10, 1, "user10@example.com", new Date(), 10, 4000);
-//		Orders o11 = new Orders(11, 96, "user11@example.com", new Date(), 5, 4000);
-//		Orders o12 = new Orders(12, 22, "user12@example.com", new Date(), 4, 2000);
-//		Orders o13 = new Orders(13, 1, "user13@example.com", new Date(), 2, 1000);
-//		Orders o14 = new Orders(14, 4, "user14@example.com", new Date(), 3, 1000);
-//		Orders o15 = new Orders(15, 1, "user15@example.com", new Date(), 6, 4000);
-//		Orders o16 = new Orders(16, 49, "user16@example.com", new Date(), 1, 2000);
-//		Orders o17 = new Orders(17, 5, "user17@example.com", new Date(), 8, 2000);
-//		Orders o18 = new Orders(18, 75, "user18@example.com", new Date(), 9, 4000);
-//		Orders o19 = new Orders(19, 82, "user19@example.com", new Date(), 6, 1000);
-//		Orders o20 = new Orders(20, 1, "user20@example.com", new Date(), 10, 1000);
-//
-//		or.save(o1);
-//		or.save(o2);
-//		or.save(o3);
-//		or.save(o4);
-//		or.save(o5);
-//		or.save(o6);
-//		or.save(o7);
-//		or.save(o8);
-//		or.save(o9);
-//		or.save(o10);
-//		or.save(o11);
-//		or.save(o12);
-//		or.save(o13);
-//		or.save(o14);
-//		or.save(o15);
-//		or.save(o16);
-//		or.save(o17);
-//		or.save(o18);
-//		or.save(o19);
-//		or.save(o20);
-//	}
+	@Test
+	void addOrders(){
+		Orders o1 = new Orders(1,1,"abc123@gmail.com",new Date(),1,1000);
+		Orders o2 = new Orders(2, 27, "user2@example.com", new Date(), 7, 2000);
+		Orders o3 = new Orders(3, 1, "user3@example.com", new Date(), 8, 2000);
+		Orders o4 = new Orders(4, 92, "user4@example.com", new Date(), 4, 2000);
+		Orders o5 = new Orders(5, 1, "user5@example.com", new Date(), 3, 4000);
+		Orders o6 = new Orders(6, 34, "user6@example.com", new Date(), 5, 4000);
+		Orders o7 = new Orders(7, 73, "user7@example.com", new Date(), 7, 2000);
+		Orders o8 = new Orders(8, 80, "user8@example.com", new Date(), 2, 1000);
+		Orders o9 = new Orders(9, 38, "user9@example.com", new Date(), 9, 1000);
+		Orders o10 = new Orders(10, 1, "user10@example.com", new Date(), 10, 4000);
+		Orders o11 = new Orders(11, 96, "user11@example.com", new Date(), 5, 4000);
+		Orders o12 = new Orders(12, 22, "user12@example.com", new Date(), 4, 2000);
+		Orders o13 = new Orders(13, 1, "user13@example.com", new Date(), 2, 1000);
+		Orders o14 = new Orders(14, 4, "user14@example.com", new Date(), 3, 1000);
+		Orders o15 = new Orders(15, 1, "user15@example.com", new Date(), 6, 4000);
+		Orders o16 = new Orders(16, 49, "user16@example.com", new Date(), 1, 2000);
+		Orders o17 = new Orders(17, 5, "user17@example.com", new Date(), 8, 2000);
+		Orders o18 = new Orders(18, 75, "user18@example.com", new Date(), 9, 4000);
+		Orders o19 = new Orders(19, 82, "user19@example.com", new Date(), 6, 1000);
+		Orders o20 = new Orders(20, 1, "user20@example.com", new Date(), 10, 1000);
+
+		or.save(o1);
+		or.save(o2);
+		or.save(o3);
+		or.save(o4);
+		or.save(o5);
+		or.save(o6);
+		or.save(o7);
+		or.save(o8);
+		or.save(o9);
+		or.save(o10);
+		or.save(o11);
+		or.save(o12);
+		or.save(o13);
+		or.save(o14);
+		or.save(o15);
+		or.save(o16);
+		or.save(o17);
+		or.save(o18);
+		or.save(o19);
+		or.save(o20);
+	}
 
 	@Autowired
 	OrderItemRepository oir;
 
-//	@Test
-//	void addOrderItems(){
-//		OrderItem oi1 = new OrderItem(1,1,1,2);
-//		OrderItem oi2 = new OrderItem(2,1,2,3);
-//		OrderItem oi3 = new OrderItem(3,1,3,1);
-//		OrderItem oi4 = new OrderItem(4,3,4,2);
-//		OrderItem oi5 = new OrderItem(5,3,5,2);
-//		OrderItem oi6 = new OrderItem(6,3,6,3);
-//		OrderItem oi7 = new OrderItem(7,2,1,3);
-//		OrderItem oi8 = new OrderItem(8,2,2,2);
-//		OrderItem oi9 = new OrderItem(9,2,3,2);
-//		OrderItem oi10 = new OrderItem(10,4,10,1);
-//
-//		oir.save(oi1);
-//		oir.save(oi2);
-//		oir.save(oi3);
-//		oir.save(oi4);
-//		oir.save(oi5);
-//		oir.save(oi6);
-//		oir.save(oi7);
-//		oir.save(oi8);
-//		oir.save(oi9);
-//		oir.save(oi10);
-//	}
+	@Test
+	void addOrderItems(){
+		OrderItem oi1 = new OrderItem(1,1,1,2);
+		OrderItem oi2 = new OrderItem(2,1,2,3);
+		OrderItem oi3 = new OrderItem(3,1,3,1);
+		OrderItem oi4 = new OrderItem(4,3,4,2);
+		OrderItem oi5 = new OrderItem(5,3,5,2);
+		OrderItem oi6 = new OrderItem(6,3,6,3);
+		OrderItem oi7 = new OrderItem(7,2,1,3);
+		OrderItem oi8 = new OrderItem(8,2,2,2);
+		OrderItem oi9 = new OrderItem(9,2,3,2);
+		OrderItem oi10 = new OrderItem(10,4,10,1);
+
+		oir.save(oi1);
+		oir.save(oi2);
+		oir.save(oi3);
+		oir.save(oi4);
+		oir.save(oi5);
+		oir.save(oi6);
+		oir.save(oi7);
+		oir.save(oi8);
+		oir.save(oi9);
+		oir.save(oi10);
+	}
 }
