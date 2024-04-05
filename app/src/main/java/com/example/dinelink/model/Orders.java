@@ -16,8 +16,7 @@ public class Orders implements Serializable {
     public Orders() {
     }
 
-    public Orders(int orderId, int hotelId, String userEmail, Date orderDate, int tableNo, float totalAmount) {
-        this.orderId = orderId;
+    public Orders(int hotelId, String userEmail, Date orderDate, int tableNo, float totalAmount) {
         this.hotelId = hotelId;
         this.userEmail = userEmail;
         this.orderDate = orderDate;
