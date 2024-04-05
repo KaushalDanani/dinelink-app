@@ -32,6 +32,7 @@ import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.example.dinelink.R;
 import com.google.gson.Gson;
+import com.example.dinelink.login.Customer_Login;
 import com.google.zxing.Result;
 
 import java.util.ArrayList;
@@ -42,11 +43,12 @@ public class QRCodeScanner extends AppCompatActivity {
 
     private TextView welcomeText;
     private CodeScanner mCodeScanner;
-    boolean isCameraPermission = false, isPhonePermission = false, isSMSPermission = false;
-    //    private final int CAMERA_REQ_CODE = 10, PHONE_NO_REQ_CODE = 20;
-    private String name;
+    boolean isCameraPermission = false, isPhonePermission = false, isSMSPermission = false, isPhoneStatePermission = false;
     public static String USER_PHONE_NO;
     ActivityResultLauncher<String[]> activityResultLauncher;
+
+//    private final int CAMERA_REQ_CODE = 10, PHONE_NO_REQ_CODE = 20;
+
 //    private CameraManager cameraManager;
 //    private String[] cameraID;
 //    boolean isFlashLightOn = false;
@@ -64,7 +66,7 @@ public class QRCodeScanner extends AppCompatActivity {
             return insets;
         });
 
-        name = getIntent().getStringExtra("KeyName");
+//        name = getIntent().getStringExtra("KeyName");
 
         welcomeText = findViewById(R.id.welcomeText);
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
@@ -121,7 +123,7 @@ public class QRCodeScanner extends AppCompatActivity {
 //        });
 
         mCodeScanner = new CodeScanner(this, scannerView);
-        welcomeText.setText("Hey, " + name + "\n🍽 Happy Dinner 🍽");
+        welcomeText.setText("Hey, " + Customer_Login.NAME_OF_USER + "\n🍽 Happy Dinner 🍽");
 
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(),
@@ -140,6 +142,10 @@ public class QRCodeScanner extends AppCompatActivity {
                             isPhonePermission = res.get(Manifest.permission.READ_PHONE_NUMBERS);
                             if (!isPhonePermission)
                                 askPhonePermissionAgain();
+                        }
+
+                        if (res.get(Manifest.permission.READ_PHONE_STATE) != null) {
+                            isPhoneStatePermission = res.get(Manifest.permission.READ_PHONE_STATE);
                         }
 
 //                        if (res.get(Manifest.permission.READ_SMS) != null) {
@@ -188,10 +194,17 @@ public class QRCodeScanner extends AppCompatActivity {
         isCameraPermission = ContextCompat.checkSelfPermission(QRCodeScanner.this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED;
         isPhonePermission = ContextCompat.checkSelfPermission(QRCodeScanner.this, Manifest.permission.READ_PHONE_NUMBERS)
-                == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(QRCodeScanner.this, Manifest.permission.READ_PHONE_STATE)
+                == PackageManager.PERMISSION_GRANTED;
+        isPhoneStatePermission = ContextCompat.checkSelfPermission(QRCodeScanner.this, Manifest.permission.READ_PHONE_STATE)
                 == PackageManager.PERMISSION_GRANTED;
 //        isSMSPermission = ContextCompat.checkSelfPermission(QRCodeScanner.this, Manifest.permission.READ_SMS)
 //                == PackageManager.PERMISSION_GRANTED;
+
+        if(isPhonePermission) {
+            TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+            USER_PHONE_NO = telephonyManager.getLine1Number();
+//            Toast.makeText(this, "Phone No: "+USER_PHONE_NO.substring(2), Toast.LENGTH_SHORT).show();
+        }
 
         List<String> requestPermissions = new ArrayList<String>();
 
@@ -199,6 +212,8 @@ public class QRCodeScanner extends AppCompatActivity {
             requestPermissions.add(Manifest.permission.CAMERA);
         if(!isPhonePermission)
             requestPermissions.add(Manifest.permission.READ_PHONE_NUMBERS);
+        if(!isPhoneStatePermission)
+            requestPermissions.add(Manifest.permission.READ_PHONE_STATE);
 //        if(!isSMSPermission)
 //            requestPermissions.add(Manifest.permission.READ_SMS);
 

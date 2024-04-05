@@ -10,10 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.dinelink.model.FoodItem;
 import com.example.dinelink.model.OrderItem;
 import com.example.dinelink.R;
+import com.example.dinelink.retrofit.MenuApi;
+import com.example.dinelink.retrofit.OrderItemApi;
+import com.example.dinelink.retrofit.RetrofitService;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChefOrderItemAdapter extends ArrayAdapter<OrderItem> {
 
@@ -39,9 +47,26 @@ public class ChefOrderItemAdapter extends ArrayAdapter<OrderItem> {
         TextView chefOrderItemContentQuantity = view.findViewById(R.id.chefOrderItemContentQuantity);
 
         OrderItem orderItem = orderItemList.get(position);
+
+        RetrofitService retrofitService = new RetrofitService();
+        MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
+       menuApi.getOrderItemByItemId(orderItem.getItemId())
+               .enqueue(new Callback<FoodItem>() {
+                   @Override
+                   public void onResponse(Call<FoodItem> call, Response<FoodItem> response) {
+                       FoodItem item = response.body();
+                       chefOrderItemContentName.setText(""+item.getItemName());
+                       chefOrderItemContentQuantity.setText(""+orderItem.getItemQuantity());
+                   }
+
+                   @Override
+                   public void onFailure(Call<FoodItem> call, Throwable t) {
+
+                   }
+               });
+
 //        System.out.println(orderItem.getItem_name());
-        chefOrderItemContentName.setText(""+orderItem.getItemId());
-        chefOrderItemContentQuantity.setText(""+orderItem.getItemQuantity());
+
 
 
 

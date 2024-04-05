@@ -15,6 +15,9 @@ public interface OrderApi {
     @GET("/orders/")
     Call<List<Orders>> getOrders(@Query("hotelId")int hotelId);
 
+    @GET("/orders/remove/")
+    Call<Void> removeOrder(@Query("orderId")int orderId);
+
     @POST("/orders/addorder")
     Call<Orders> addOrder(@Body Orders order);
 }
