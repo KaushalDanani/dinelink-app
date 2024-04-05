@@ -43,18 +43,16 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
-    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.0'
+    implementation libs.code.scanner
 
-
-    implementation "com.google.android.libraries.identity.googleid:googleid:1.1.0"
-    implementation "androidx.credentials:credentials:1.3.0-alpha01"
-
-    implementation "androidx.credentials:credentials-play-services-auth:1.3.0-alpha01"
-
-
+    implementation libs.googleid
+    implementation libs.credentials
+    implementation libs.credentials.play.services.auth
 
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.gms.play.services.auth
+
+    implementation libs.checkout
 
 }
