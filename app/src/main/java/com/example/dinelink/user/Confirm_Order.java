@@ -21,21 +21,33 @@ import com.example.dinelink.adapter.OrderListAdapter;
 import com.example.dinelink.R;
 import com.example.dinelink.login.Customer_Login;
 import com.example.dinelink.model.FoodItem;
+import com.example.dinelink.model.Orders;
+import com.example.dinelink.retrofit.OrderApi;
+import com.example.dinelink.retrofit.RetrofitService;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
+import android.os.Handler;
+
+import java.io.DataOutputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
 
 public class Confirm_Order extends Activity implements PaymentResultListener {
     TextView Time,TotalAmount,GSTAmount,GrandTotalAmount;
     ListView orderView;
     List<FoodItem> orderList;
     Button confirmOrderBtn;
+    RetrofitService retrofitService;
+    Socket s;
     private static double total, gst;
     private final DecimalFormat df = new DecimalFormat("0.00");
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
@@ -46,6 +58,12 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
 
         orderList = getIntent().getExtras().getParcelableArrayList("items");
 
+        retrofitService = new RetrofitService();
+        OrderApi orderApi = retrofitService.getRetrofit().create(OrderApi.class);
+//        orderApi.addOrder()
+
+        SocketProgramming sp = new SocketProgramming(this,s);
+
         TotalAmount = findViewById(R.id.TotalAmount);
         GSTAmount = findViewById(R.id.GSTAmount);
         GrandTotalAmount = findViewById(R.id.GrandTotalAmount);
@@ -53,6 +71,7 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
         Time = findViewById(R.id.Time);
 
         LocalTime t = LocalTime.now();
+        String label = "Time:";
         String colon = ":";
         Time.setText(":  " + t.getHour() + colon + t.getMinute());
 
@@ -70,6 +89,7 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
             }
         });
     }
+
 
     @SuppressLint("SetTextI18n")
     protected void countTotal(){
@@ -118,8 +138,14 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
 
 
         // Jay P Code, Networking
+        try {
+            SocketExecution se = new SocketExecution(Confirm_Order.this, s, orderList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        startActivity(new Intent(Confirm_Order.this, QRCodeScanner.class));
+//        startActivity(new Intent(Confirm_Order.this, QRCodeScanner.class));
+        startActivity(new Intent(Confirm_Order.this, MenuItemActivity.class));
     }
 
     @Override
@@ -132,5 +158,65 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
         bb.putParcelableArrayList("items",new ArrayList<>(orderList));
         ii.putExtras(bb);
         startActivity(ii);
+    }
+}
+
+class SocketProgramming implements Runnable {
+
+    Thread th;
+    Confirm_Order confirmOrderActivity;
+    Handler handler;
+    Socket s;
+
+    SocketProgramming(Confirm_Order confirmOrderActivity, Socket s) {
+        this.confirmOrderActivity = confirmOrderActivity;
+        th = new Thread(this);
+        this.s = s;
+        handler = new Handler(confirmOrderActivity.getMainLooper()); // Create a handler for the main UI thread
+        th.start();
+    }
+
+    @Override
+    public void run() {
+        try {
+            s = new Socket("192.168.107.169", 8388);
+            confirmOrderActivity.s = s;
+            handler.post(new Runnable() { // Post a Runnable to the main UI thread
+                @Override
+                public void run() {
+                    Toast.makeText(confirmOrderActivity, "Client connection successful", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (Exception e) {
+            System.out.println("CLIENT : " + e.getMessage());
+        }
+    }
+}
+
+class SocketExecution implements Runnable {
+    Thread th;
+    Confirm_Order confirmOrderActivity;
+    Handler handler;
+    Socket s;
+
+    List<FoodItem> data;
+
+    SocketExecution(Confirm_Order confirmOrderActivity, Socket s, List<FoodItem> data) {
+        this.confirmOrderActivity = confirmOrderActivity;
+        this.s = s;
+        handler = new Handler(confirmOrderActivity.getMainLooper());
+        th = new Thread(this);
+        this.data = data;
+        th.start();
+    }
+
+    @Override
+    public void run() {
+        try {
+            ObjectOutputStream dos = new ObjectOutputStream(s.getOutputStream());
+            dos.writeObject(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

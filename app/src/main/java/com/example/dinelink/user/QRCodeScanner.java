@@ -31,6 +31,7 @@ import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.example.dinelink.R;
+import com.google.gson.Gson;
 import com.example.dinelink.login.Customer_Login;
 import com.google.zxing.Result;
 
@@ -156,6 +157,7 @@ public class QRCodeScanner extends AppCompatActivity {
                 });
 
         requestForPermissions();
+//        Toast.makeText(this, "Phone No: "+USER_PHONE_NO.substring(2), Toast.LENGTH_SHORT).show();
 
         if (isCameraPermission && isPhonePermission) {
             mCodeScanner.startPreview();
@@ -165,6 +167,11 @@ public class QRCodeScanner extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            QRCodeDecoder q = null;
+                            String sqJson = result.getText();
+                            Gson gson = new Gson();
+                            q = gson.fromJson(sqJson,QRCodeDecoder.class);
+//                            Toast.makeText(QRCodeScanner.this,q.hotelId+" "+q.tableNo,Toast.LENGTH_SHORT).show();
                             Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
                             ii.putExtra("HOTEL_ID", Integer.parseInt(result.getText()));
                             startActivity(ii);
@@ -213,6 +220,9 @@ public class QRCodeScanner extends AppCompatActivity {
         if(!requestPermissions.isEmpty())
             activityResultLauncher.launch(requestPermissions.toArray(new String[0]));
 
+//        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+//        USER_PHONE_NO = telephonyManager.getLine1Number();
+//        Toast.makeText(this, "Phone No: "+USER_PHONE_NO.substring(2), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -348,6 +358,9 @@ public class QRCodeScanner extends AppCompatActivity {
                     .create().show();
         }
     }
+
+
+
 
 
 
