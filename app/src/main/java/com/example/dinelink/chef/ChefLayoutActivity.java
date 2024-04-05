@@ -22,6 +22,7 @@ import com.example.dinelink.retrofit.OrderApi;
 import com.example.dinelink.retrofit.RetrofitService;
 
 import java.io.DataInputStream;
+import java.io.ObjectInputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -35,8 +36,8 @@ import android.os.Handler;
 import android.widget.Toast;
 
 
-    public class ChefLayoutActivity extends Activity {
 
+public class ChefLayoutActivity extends Activity {
 
 	ListView chefOrderListView;
 
@@ -52,7 +53,7 @@ import android.widget.Toast;
 
 		chefOrderListView = findViewById(R.id.chefOrderListView);
 
-		SocketProgramming sp = new SocketProgramming(this,hotelId);
+		SocketProgramming sp = new SocketProgramming(this,hotelId,orderList, chefOrderListView);
 
 
 		Intent i1 = getIntent();
@@ -94,10 +95,14 @@ class SocketProgramming implements Runnable {
 	ChefLayoutActivity chefLayoutActivity;
 	Handler handler;
 	int hotelId;
+	List<Orders> ordersList;
+	ListView chefOrderListView;
 
-	SocketProgramming(ChefLayoutActivity chefLayoutActivity,int hotelId) {
+	SocketProgramming(ChefLayoutActivity chefLayoutActivity,int hotelId, List<Orders> ordersList, ListView chefOrderListView) {
 		this.chefLayoutActivity = chefLayoutActivity;
 		this.hotelId=hotelId;
+		this.chefOrderListView=chefOrderListView;
+		this.ordersList=ordersList;
 		th = new Thread(this);
 		handler = new Handler(chefLayoutActivity.getMainLooper()); // Create a handler for the main UI thread
 		System.out.println("CONS");
@@ -154,7 +159,7 @@ class SocketProgramming implements Runnable {
 					}
 				});
 
-				SocketExecution se = new SocketExecution(chefLayoutActivity,s);
+				SocketExecution se = new SocketExecution(chefLayoutActivity,s,ordersList,chefOrderListView);
 			}
 		} catch (Exception e) {
 			System.out.println("SERVER : " + e.getMessage());
@@ -167,12 +172,16 @@ class SocketExecution implements Runnable{
 		ChefLayoutActivity chefLayoutActivity;
 		Handler handler;
 		Socket s;
-		DataInputStream dis;
+		List<Orders> orderList;
+		ObjectInputStream ois;
+		ListView chefOrderListView;
 
-		SocketExecution(ChefLayoutActivity chefLayoutActivity, Socket s)
+		SocketExecution(ChefLayoutActivity chefLayoutActivity, Socket s, List<Orders> orderList, ListView chefOrderListView)
 		{
 			this.chefLayoutActivity=chefLayoutActivity;
 			handler=new Handler(chefLayoutActivity.getMainLooper());
+			this.orderList=orderList;
+			this.chefOrderListView=chefOrderListView;
 			th=new Thread(this);
 			this.s=s;
 			th.start();
@@ -181,12 +190,18 @@ class SocketExecution implements Runnable{
 	@Override
 	public void run() {
 			try{
-				dis=new DataInputStream(s.getInputStream());
-				String size=dis.readUTF();
+				ois = new ObjectInputStream(s.getInputStream());
+				Orders newOrder = (Orders)ois.readObject();
+				orderList.add(newOrder);
+
+				ChefOrderAdapter coad = new ChefOrderAdapter(chefLayoutActivity,R.layout.chef_order_card,orderList);
+				chefOrderListView.setAdapter(coad);
+
+
 				handler.post(new Runnable() {
 					@Override
 					public void run() {
-						Toast.makeText(chefLayoutActivity, ""+size, Toast.LENGTH_SHORT).show();
+						Toast.makeText(chefLayoutActivity, ""+newOrder.getOrderId(), Toast.LENGTH_SHORT).show();
 					}
 				});
 			}

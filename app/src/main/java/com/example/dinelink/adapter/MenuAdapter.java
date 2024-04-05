@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 
 import com.example.dinelink.model.FoodItem;
 import com.example.dinelink.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -57,6 +58,9 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
         foodItemQuantity.setText(""+item.getItemQuantity());
         foodItemPlusBtn.setText("+");
         foodItemMinusBtn.setText("-");
+
+        String imageUrl = "https://example.com/image.jpg";
+        Picasso.get().load(imageUrl).into(foodItemImage);
 
         foodItemPlusBtn.setOnClickListener(new View.OnClickListener() {
             @Override

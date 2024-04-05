@@ -1,9 +1,10 @@
 package com.example.dinelink.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Orders {
+public class Orders implements Serializable {
 
     private int orderId;
     private int hotelId;
