@@ -41,9 +41,10 @@ import retrofit2.Response;
 		int hotelId=1;
 
 		Intent i1 = getIntent();
-		List<FoodItem> orderedItems = i1.getExtras().getParcelableArrayList("items");
+//		List<FoodItem> orderedItems = i1.getExtras().getParcelableArrayList("items");
+		hotelId = i1.getIntExtra("hotel_id",1);
 
-		Toast.makeText(this, ""+orderedItems.size(), Toast.LENGTH_SHORT).show();
+//		Toast.makeText(this, ""+orderedItems.size(), Toast.LENGTH_SHORT).show();
 
 		RetrofitService retrofitService = new RetrofitService();
 		OrderApi orderApi = retrofitService.getRetrofit().create(OrderApi.class);

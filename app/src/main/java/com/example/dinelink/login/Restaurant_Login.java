@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.dinelink.R;
+import com.example.dinelink.chef.ChefLayoutActivity;
 import com.example.dinelink.model.Hotel;
 import com.example.dinelink.retrofit.HotelApi;
 import com.example.dinelink.retrofit.RetrofitService;
@@ -78,6 +79,9 @@ public class Restaurant_Login extends Activity {
 
                         if(flag == 1){
                             Toast.makeText(Restaurant_Login.this,"Login Successful!",Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(Restaurant_Login.this, ChefLayoutActivity.class);
+                            i.putExtra("hotel_id",Integer.parseInt(hotel_id));
+                            startActivity(i);
                         }
                         else{
                             Toast.makeText(Restaurant_Login.this,"Login Denied",Toast.LENGTH_SHORT).show();
