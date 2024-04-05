@@ -19,4 +19,7 @@ public class OrdersService {
         return orders;
     }
 
+    public int save(Orders order){
+        return or.save(order).getOrderId();
+    }
 }

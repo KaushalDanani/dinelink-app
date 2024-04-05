@@ -8,4 +8,5 @@ import java.util.List;
 public interface OrdersRepository extends JpaRepository<Orders,Integer> {
 
     public List<Orders> findAllByHotelId(int hotelId);
+
 }
