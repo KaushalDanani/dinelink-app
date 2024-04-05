@@ -53,11 +53,11 @@ import android.widget.Toast;
 		chefOrderListView = findViewById(R.id.chefOrderListView);
 
 		SocketProgramming sp = new SocketProgramming(this,hotelId);
-		
 
-//		Intent i1 = getIntent();
+
+		Intent i1 = getIntent();
 //		List<FoodItem> orderedItems = i1.getExtras().getParcelableArrayList("items");
-
+		hotelId = i1.getIntExtra("hotel_id",1);
 
 //		Toast.makeText(this, ""+orderedItems.size(), Toast.LENGTH_SHORT).show();
 
@@ -198,5 +198,4 @@ class SocketExecution implements Runnable{
 }
 
 
-	
-	
+

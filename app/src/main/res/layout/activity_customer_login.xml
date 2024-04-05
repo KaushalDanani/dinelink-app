@@ -42,10 +42,10 @@
 
             <!-- ImageView -->
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/image_4"
-                android:paddingHorizontal="10dp"/>
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/dine_link_tp_logo_black"
+                android:paddingHorizontal="10dp" />
 
             <!-- Space view to create dynamic space -->
             <Space
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/joti_one"
                 android:text="DineLink"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textColor="#000000"
                 android:paddingHorizontal="10dp"/>
 
@@ -69,13 +69,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:fontFamily="@font/sahitya"
             android:gravity="center"
             android:paddingHorizontal="7dp"
             android:text="CUSTOMER LOGIN"
             android:layout_marginHorizontal="17dp"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#000000">
 
@@ -85,7 +85,7 @@
             android:id="@+id/dinelink_sign_in_with_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/rectangle_1_shape"
             android:gravity="center"
             android:onClick="SignIn_With_Google"
@@ -122,12 +122,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="210dp"
             android:fontFamily="@font/itim"
             android:gravity="center"
             android:paddingHorizontal="15dp"
             android:text="@string/cusromer_login_text"
-            android:textSize="32dp"
+            android:textSize="25dp"
             android:textColor="#000000">
 
         </TextView>

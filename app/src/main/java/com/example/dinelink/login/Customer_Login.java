@@ -29,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class Customer_Login extends Activity {
 
+    public static String USER_EMAIL_ID, NAME_OF_USER;
     private SignInClient oneTapClient;
     private BeginSignInRequest signInRequest;
     private static final int REQ_SIGN_IN_WITH_GOOGLE = 37;
@@ -89,17 +90,17 @@ public class Customer_Login extends Activity {
             try {
                 SignInCredential credential = oneTapClient.getSignInCredentialFromIntent(data);
                 String idToken = credential.getGoogleIdToken();
-                String email = credential.getId();
-                String name = credential.getDisplayName();
-                Toast.makeText(this,"Email ID : "+email+"\n Name : "+name, Toast.LENGTH_SHORT).show();
+                USER_EMAIL_ID = credential.getId();
+                NAME_OF_USER = credential.getDisplayName();
+                Toast.makeText(this,"Email ID : "+USER_EMAIL_ID+"\n Name : "+NAME_OF_USER, Toast.LENGTH_SHORT).show();
                 Intent ii = new Intent(this, QRCodeScanner.class);
-                ii.putExtra("KeyEmailID", email);
-                ii.putExtra("KeyName", name);
+//                ii.putExtra("KeyEmailID", USER_EMAIL_ID);
+//                ii.putExtra("KeyName", name);
                 startActivity(ii);
 
                 if (idToken != null) {
                     Log.d(TAG, "Got ID token.");
-                } else if (name != null) {
+                } else if (NAME_OF_USER != null) {
                     Log.d(TAG, "Got Name.");
                 }
             } catch (ApiException e) {
