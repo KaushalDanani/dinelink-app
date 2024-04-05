@@ -20,14 +20,14 @@
         android:layout_height="match_parent"
         android:layout_weight="7"
         android:orientation="vertical"
-        android:weightSum="5">
+        android:weightSum="6">
 
         <TextView
             android:id="@+id/foodItemName"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:textSize="20sp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:textColor="@color/black" />
 
         <TextView
@@ -60,6 +60,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"
             android:src="@drawable/image_20"
+            android:background="@drawable/rounded_image_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

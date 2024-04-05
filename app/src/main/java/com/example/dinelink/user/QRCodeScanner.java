@@ -173,7 +173,7 @@ public class QRCodeScanner extends AppCompatActivity {
                             q = gson.fromJson(sqJson,QRCodeDecoder.class);
 //                            Toast.makeText(QRCodeScanner.this,q.hotelId+" "+q.tableNo,Toast.LENGTH_SHORT).show();
                             Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
-                            ii.putExtra("HOTEL_ID", Integer.parseInt(result.getText()));
+                            ii.putExtra("HOTEL_ID", Integer.parseInt(""+result.getText()));
                             startActivity(ii);
                             Toast.makeText(QRCodeScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
                         }

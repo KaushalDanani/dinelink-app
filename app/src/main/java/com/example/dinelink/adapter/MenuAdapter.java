@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,7 +61,14 @@ public class MenuAdapter extends ArrayAdapter<FoodItem> {
         foodItemMinusBtn.setText("-");
 
         String imageUrl = "https://example.com/image.jpg";
-        Picasso.get().load(imageUrl).into(foodItemImage);
+
+        if(!item.getItemImgUrl().equals(""))
+        {
+            imageUrl = item.getItemImgUrl();
+        }
+        Picasso.get().load(imageUrl).fit().centerCrop().into(foodItemImage);
+
+
 
         foodItemPlusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
