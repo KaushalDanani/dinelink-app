@@ -1,5 +1,6 @@
 package com.dinelink.backend;
 
+import com.dinelink.backend.model.FoodItem;
 import com.dinelink.backend.model.OrderItem;
 import com.dinelink.backend.model.Orders;
 import com.dinelink.backend.repository.FoodItemRepository;
@@ -23,32 +24,32 @@ class BackendApplicationTests {
 	@Autowired
 	private HotelDao hotelDao;
 
-	@Test
-	void add() {
-		Hotel hotel = new Hotel();
-		hotel.setHotel_id(1);
-		hotel.setHotel_addr("near fatehgunj, Vadodara");
-		hotel.setHotel_name("khodaldham kathiyavadi hotel");
-		hotel.setHotel_rating(5);
-		hotel.setHotel_x_coords(10.10);
-		hotel.setHotel_y_coords(10.10);
-		hotel.setHote_password("kkhh001");
-		hotel.setHotel_link("www.khodaldhamhotel.com");
-		hotel.setHotel_image(null);
-		hotelDao.save(hotel);
-
-		User user = new User();
-		user.setUser_name("Soham");
-		user.setUser_email("soham@gmail.com");
-		userDao.save(user);
-
-	}
+//	@Test
+//	void add() {
+//		Hotel hotel = new Hotel();
+//		hotel.setHotel_id(1);
+//		hotel.setHotel_addr("near fatehgunj, Vadodara");
+//		hotel.setHotel_name("khodaldham kathiyavadi hotel");
+//		hotel.setHotel_rating(5);
+//		hotel.setHotel_x_coords(10.10);
+//		hotel.setHotel_y_coords(10.10);
+//		hotel.setHote_password("kkhh001");
+//		hotel.setHotel_link("www.khodaldhamhotel.com");
+//		hotel.setHotel_image(null);
+//		hotelDao.save(hotel);
+//
+//		User user = new User();
+//		user.setUser_name("Soham");
+//		user.setUser_email("soham@gmail.com");
+//		userDao.save(user);
+//
+//	}
 
 	@Autowired
 	FoodItemRepository mr;
 
-//	@Test
-//	void addFoodItems(){
+	@Test
+	void addFoodItems(){
 //		FoodItem f1 = new FoodItem(1,1,"Mojito",129,"Lime and mint essence","Beverages","");
 //		FoodItem f2 = new FoodItem(2,1,"Chicken Caesar Salad",199,"Fresh romaine lettuce, grilled chicken, parmesan cheese, and Caesar dressing","Salads","");
 //		FoodItem f3 = new FoodItem(3,2,"Margherita Pizza",299,"Fresh tomato sauce, mozzarella cheese, and basil leaves on a thin crust","Pizzas","");
@@ -69,7 +70,28 @@ class BackendApplicationTests {
 //		FoodItem f18 = new FoodItem(18,9,"Fish Tacos",279,"Grilled fish fillets served in warm tortillas with shredded cabbage, salsa, and avocado crema","Tacos","");
 //		FoodItem f19 = new FoodItem(19,10,"Mushroom Risotto",269,"Creamy risotto cooked with Arborio rice, mushrooms, onions, and white wine","Rice Dishes","");
 //		FoodItem f20 = new FoodItem(20,10,"Chicken Tikka Masala",359,"Tender pieces of chicken cooked in a flavorful tomato-based curry sauce with aromatic spices","Curries","");
-//
+//		FoodItem f21 = new FoodItem(21, 1, "Chicken Tikka Masala", 249, "Tender chicken tikka cooked in a rich tomato and cream sauce with aromatic spices", "Curries", "");
+//		FoodItem f22 = new FoodItem(22, 1, "Paneer Butter Masala", 229, "Soft paneer cubes cooked in a creamy tomato-based gravy with butter and spices", "Curries", "");
+//		FoodItem f23 = new FoodItem(23, 1, "Dal Makhani", 199, "Black lentils and kidney beans slow-cooked with tomatoes, cream, and spices", "Curries", "");
+//		FoodItem f24 = new FoodItem(24, 1, "Vegetable Korma", 219, "Assorted vegetables cooked in a rich, creamy coconut-based curry sauce with nuts and spices", "Curries", "");
+//		FoodItem f25 = new FoodItem(25, 1, "Chicken Curry", 239, "Tender chicken pieces cooked in a flavorful curry sauce with onions, tomatoes, and spices", "Curries", "");
+//		FoodItem f26 = new FoodItem(26, 1, "Beef Vindaloo", 259, "Tender beef chunks cooked in a spicy and tangy curry sauce with potatoes, vinegar, and spices", "Curries", "");
+//		FoodItem f27 = new FoodItem(27, 1, "Egg Curry", 189, "Hard-boiled eggs cooked in a rich and aromatic tomato-based curry sauce with onions and spices", "Curries", "");
+//		FoodItem f28 = new FoodItem(28, 1, "Fish Curry", 279, "Fresh fish fillets cooked in a tangy and flavorful curry sauce with coconut milk, tamarind, and spices", "Curries", "");
+//		FoodItem f29 = new FoodItem(29, 1, "Mutton Rogan Josh", 299, "Tender mutton pieces cooked in a thick, aromatic gravy with yogurt, tomatoes, and spices", "Curries", "");
+//		FoodItem f30 = new FoodItem(30, 1, "Vegetable Jalfrezi", 209, "Mixed vegetables stir-fried with onions, bell peppers, and tomatoes in a spicy and tangy curry sauce", "Curries", "");
+//		FoodItem f31 = new FoodItem(31, 1, "Chana Masala", 199, "Chickpeas cooked in a spiced tomato-based curry sauce with onions, ginger, and garlic", "Curries", "");
+//		FoodItem f32 = new FoodItem(32, 1, "Palak Paneer", 229, "Soft paneer cubes cooked in a creamy spinach gravy with garlic, onions, and spices", "Curries", "");
+//		FoodItem f33 = new FoodItem(33, 1, "Goan Prawn Curry", 299, "Fresh prawns cooked in a coconut-based curry sauce with tomatoes, onions, and Goan spices", "Curries", "");
+//		FoodItem f34 = new FoodItem(34, 1, "Lamb Curry", 269, "Tender lamb pieces cooked in a flavorful curry sauce with onions, tomatoes, and a blend of spices", "Curries", "");
+		FoodItem f35 = new FoodItem(35, 1, "Vegetable Biryani", 249, "Spiced rice cooked with mixed vegetables and aromatic spices", "Rice", "");
+		FoodItem f36 = new FoodItem(36, 1, "Chicken Fried Rice", 199, "Stir-fried rice with chicken, eggs, vegetables, and soy sauce", "Rice", "");
+		FoodItem f37 = new FoodItem(37, 1, "Paneer Pulao", 229, "Fragrant rice cooked with paneer cubes, spices, and herbs", "Rice", "");
+		FoodItem f38 = new FoodItem(38, 1, "Schezwan Fried Rice", 259, "Spicy fried rice with Schezwan sauce, mixed vegetables, and tofu or chicken", "Rice", "");
+		FoodItem f39 = new FoodItem(39, 1, "Lemon Rice", 179, "Tangy rice flavored with lemon juice, curry leaves, and peanuts", "Rice", "");
+
+
+
 //		mr.save(f1);
 //		mr.save(f2);
 //		mr.save(f3);
@@ -90,7 +112,27 @@ class BackendApplicationTests {
 //		mr.save(f18);
 //		mr.save(f19);
 //		mr.save(f20);
-//	}
+//		mr.save(f21);
+//		mr.save(f22);
+//		mr.save(f23);
+//		mr.save(f24);
+//		mr.save(f25);
+//		mr.save(f26);
+//		mr.save(f27);
+//		mr.save(f28);
+//		mr.save(f29);
+//		mr.save(f30);
+//		mr.save(f31);
+//		mr.save(f32);
+//		mr.save(f33);
+//		mr.save(f34);
+		mr.save(f35);
+		mr.save(f36);
+		mr.save(f37);
+		mr.save(f38);
+		mr.save(f39);
+
+	}
 
 	@Autowired
 	OrdersRepository or;

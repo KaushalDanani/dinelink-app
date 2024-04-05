@@ -25,4 +25,9 @@ public class OrdersController {
 
     }
 
+    @GetMapping(value = "/remove/")
+    public void removeOrder(@RequestParam("orderId")int orderId){
+        os.removeOrder(orderId);
+    }
+
 }

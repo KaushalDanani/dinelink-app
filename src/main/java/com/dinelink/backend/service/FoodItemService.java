@@ -1,6 +1,7 @@
 package com.dinelink.backend.service;
 
 import com.dinelink.backend.model.FoodItem;
+import com.dinelink.backend.model.OrderItem;
 import com.dinelink.backend.repository.FoodItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class FoodItemService {
 
         return menu;
 
+    }
+
+    public FoodItem getItemById(@RequestParam("itemId")int itemId){
+        return mr.findAllByItemId(itemId);
     }
 
 }

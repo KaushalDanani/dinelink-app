@@ -19,4 +19,8 @@ public class OrdersService {
         return orders;
     }
 
+    public void removeOrder(@RequestParam("orderId")int orderId){
+        or.deleteById(orderId);
+    }
+
 }
