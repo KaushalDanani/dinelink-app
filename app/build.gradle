@@ -19,6 +19,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "CLIENT_ID", '"291779571169-vnipp7bnkgpe4ej2o5amtd11fiu3pf0e.apps.googleusercontent.com"')
+        buildConfigField("String", "PAYMENT_KEY_ID", '"rzp_test_GwJkretHqsmjIe"')
     }
 
     buildTypes {
