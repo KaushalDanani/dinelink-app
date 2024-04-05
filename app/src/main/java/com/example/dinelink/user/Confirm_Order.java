@@ -21,8 +21,10 @@ import com.example.dinelink.adapter.OrderListAdapter;
 import com.example.dinelink.R;
 import com.example.dinelink.login.Customer_Login;
 import com.example.dinelink.model.FoodItem;
+import com.example.dinelink.model.OrderItem;
 import com.example.dinelink.model.Orders;
 import com.example.dinelink.retrofit.OrderApi;
+import com.example.dinelink.retrofit.OrderItemApi;
 import com.example.dinelink.retrofit.RetrofitService;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
@@ -37,9 +39,12 @@ import java.net.Socket;
 import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Confirm_Order extends Activity implements PaymentResultListener {
     TextView Time,TotalAmount,GSTAmount,GrandTotalAmount;
@@ -139,13 +144,48 @@ public class Confirm_Order extends Activity implements PaymentResultListener {
 
         // Jay P Code, Networking
         try {
-            SocketExecution se = new SocketExecution(Confirm_Order.this, s, orderList);
+            
+            RetrofitService retrofitService1 = new RetrofitService();
+            OrderApi oa1 = retrofitService1.getRetrofit().create(OrderApi.class);
+            Orders od = new Orders(QRCodeScanner.HOTEL_ID, Customer_Login.USER_EMAIL_ID, new Date(), QRCodeScanner.TABLE_NO, (float) (total+gst));
+            oa1.addOrder(od).enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+
+                    int order_id = response.body();
+                    for (FoodItem fi : orderList) {
+                        OrderItem oi = new OrderItem(order_id, fi.getItemId(), fi.getItemQuantity());
+                        OrderItemApi orderItemApi1 = retrofitService1.getRetrofit().create(OrderItemApi.class);
+                        orderItemApi1.addOrderItems(oi).enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+
+                            }
+                        });
+                    }
+                    od.setOrderId(order_id);
+                    SocketExecution se = new SocketExecution(Confirm_Order.this, s, od);
+                    startActivity(new Intent(Confirm_Order.this, MenuItemActivity.class));
+                }
+
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+
+                }
+            });
+
+
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 //        startActivity(new Intent(Confirm_Order.this, QRCodeScanner.class));
-        startActivity(new Intent(Confirm_Order.this, MenuItemActivity.class));
     }
 
     @Override
@@ -199,9 +239,9 @@ class SocketExecution implements Runnable {
     Handler handler;
     Socket s;
 
-    List<FoodItem> data;
+    Orders data;
 
-    SocketExecution(Confirm_Order confirmOrderActivity, Socket s, List<FoodItem> data) {
+    SocketExecution(Confirm_Order confirmOrderActivity, Socket s, Orders data) {
         this.confirmOrderActivity = confirmOrderActivity;
         this.s = s;
         handler = new Handler(confirmOrderActivity.getMainLooper());

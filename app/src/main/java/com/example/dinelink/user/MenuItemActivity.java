@@ -107,7 +107,7 @@ public class MenuItemActivity extends Activity implements CategoriesAdapter.OnBu
 		});
 
 
-			int hotelId = 1;
+			hotelId = QRCodeScanner.HOTEL_ID;
 			RetrofitService retrofitService = new RetrofitService();
 			MenuApi menuApi = retrofitService.getRetrofit().create(MenuApi.class);
 			menuApi.getMenu(hotelId)

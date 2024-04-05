@@ -19,5 +19,5 @@ public interface OrderApi {
     Call<Void> removeOrder(@Query("orderId")int orderId);
 
     @POST("/orders/addorder")
-    Call<Orders> addOrder(@Body Orders order);
+    Call<Integer> addOrder(@Body Orders order);
 }

@@ -10,8 +10,7 @@ public class OrderItem {
     public OrderItem() {
     }
 
-    public OrderItem(int orderItemId, int orderId, int itemId, int itemQuantity) {
-        this.orderItemId = orderItemId;
+    public OrderItem(int orderId, int itemId, int itemQuantity) {
         this.orderId = orderId;
         this.itemId = itemId;
         this.itemQuantity = itemQuantity;
