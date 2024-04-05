@@ -31,6 +31,7 @@ import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.example.dinelink.R;
+import com.google.gson.Gson;
 import com.google.zxing.Result;
 
 import java.util.ArrayList;
@@ -160,6 +161,11 @@ public class QRCodeScanner extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            QRCodeDecoder q = null;
+                            String sqJson = result.getText();
+                            Gson gson = new Gson();
+                            q = gson.fromJson(sqJson,QRCodeDecoder.class);
+                            Toast.makeText(QRCodeScanner.this,q.hotelId+" "+q.tableNo,Toast.LENGTH_SHORT).show();
                             Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
                             ii.putExtra("HOTEL_ID", Integer.parseInt(result.getText()));
                             startActivity(ii);
