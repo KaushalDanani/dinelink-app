@@ -11,8 +11,6 @@ import android.text.format.Formatter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.dinelink.R;
 import com.example.dinelink.adapter.ChefOrderAdapter;
 import com.example.dinelink.model.FoodItem;
@@ -190,9 +188,34 @@ class SocketExecution implements Runnable{
 	@Override
 	public void run() {
 			try{
+				handler.post(new Runnable() { // Post a Runnable to the main UI thread
+					@Override
+					public void run() {
+						Toast.makeText(chefLayoutActivity, "In Execution", Toast.LENGTH_SHORT).show();
+					}
+				});
 				ois = new ObjectInputStream(s.getInputStream());
 				Orders newOrder = (Orders)ois.readObject();
 				orderList.add(newOrder);
+
+				handler.post(new Runnable() { // Post a Runnable to the main UI thread
+					@Override
+					public void run() {
+						Toast.makeText(chefLayoutActivity, "Table : "+newOrder.getTableNo(), Toast.LENGTH_SHORT).show();
+					}
+				});
+
+//				chefLayoutActivity.runOnUiThread(new Runnable() {
+//					@Override
+//					public void run() {
+//						if (adapter == null) {
+//							adapter = new ChefOrderAdapter(chefLayoutActivity, R.layout.chef_order_card, orderList);
+//							chefOrderListView.setAdapter(adapter);
+//						} else {
+//							adapter.notifyDataSetChanged();
+//						}
+//					}
+//				});
 
 				ChefOrderAdapter coad = new ChefOrderAdapter(chefLayoutActivity,R.layout.chef_order_card,orderList);
 				chefOrderListView.setAdapter(coad);
