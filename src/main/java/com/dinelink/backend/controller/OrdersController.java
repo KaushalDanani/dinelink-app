@@ -3,8 +3,10 @@ package com.dinelink.backend.controller;
 import com.dinelink.backend.model.Orders;
 import com.dinelink.backend.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -19,11 +21,12 @@ public class OrdersController {
 
         List<Orders> orders= os.getOrdersByHotelId(hotelId);
         return orders;
-
     }
 
-    @PostMapping("/addorder")
-    public int addOrder(@RequestBody Orders order){
+    @PostMapping(value = "/addorder")
+    public Integer addOrder(@RequestBody Orders order){
+        order.setOrderDate(new Date());
+        System.out.println("Inside Controller.....");
         return os.save(order);
     }
     @GetMapping(value = "/remove/")

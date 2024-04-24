@@ -1,30 +1,48 @@
 package com.dinelink.backend.model.hotel;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.NoArgsConstructor;
 
 import java.sql.Blob;
 
 @Entity
+@NoArgsConstructor
 public class Hotel {
 
+    @GeneratedValue
     @Id
     private int hotel_id;
+    @Column
     private String hotel_name;
-    private String hote_password;
+    @Column
+    private String hotel_password;
+    @Column
     private String hotel_addr;
+    @Column
     private Double hotel_x_coords;
-    private Double Hotel_y_coords;
-    private int hotel_rating;
+    @Column
+    private Double hotel_y_coords;
+    @Column
+    private float hotel_rating;
+    @Column
     private String hotel_link;
+    @Column
     private Blob hotel_image;
+    @Column
     private String hotel_ip;
 
-    public String getHotel_ip() {
-        return hotel_ip;
-    }
-
-    public void setHotel_ip(String hotel_ip) {
+    public Hotel(String hotel_name, String hotel_password, String hotel_addr, Double hotel_x_coords, Double hotel_y_coords, float hotel_rating, String hotel_link, Blob hotel_image, String hotel_ip) {
+        this.hotel_name = hotel_name;
+        this.hotel_password = hotel_password;
+        this.hotel_addr = hotel_addr;
+        this.hotel_x_coords = hotel_x_coords;
+        this.hotel_y_coords = hotel_y_coords;
+        this.hotel_rating = hotel_rating;
+        this.hotel_link = hotel_link;
+        this.hotel_image = hotel_image;
         this.hotel_ip = hotel_ip;
     }
 
@@ -44,12 +62,12 @@ public class Hotel {
         this.hotel_name = hotel_name;
     }
 
-    public String getHote_password() {
-        return hote_password;
+    public String getHotel_password() {
+        return hotel_password;
     }
 
-    public void setHote_password(String hote_password) {
-        this.hote_password = hote_password;
+    public void setHotel_password(String hotel_password) {
+        this.hotel_password = hotel_password;
     }
 
     public String getHotel_addr() {
@@ -69,18 +87,18 @@ public class Hotel {
     }
 
     public Double getHotel_y_coords() {
-        return Hotel_y_coords;
+        return hotel_y_coords;
     }
 
     public void setHotel_y_coords(Double hotel_y_coords) {
-        Hotel_y_coords = hotel_y_coords;
+        this.hotel_y_coords = hotel_y_coords;
     }
 
-    public int getHotel_rating() {
+    public float getHotel_rating() {
         return hotel_rating;
     }
 
-    public void setHotel_rating(int hotel_rating) {
+    public void setHotel_rating(float hotel_rating) {
         this.hotel_rating = hotel_rating;
     }
 
@@ -100,5 +118,11 @@ public class Hotel {
         this.hotel_image = hotel_image;
     }
 
+    public String getHotel_ip() {
+        return hotel_ip;
+    }
 
+    public void setHotel_ip(String hotel_ip) {
+        this.hotel_ip = hotel_ip;
+    }
 }

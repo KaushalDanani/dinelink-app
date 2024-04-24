@@ -13,7 +13,6 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Orders {
 
     @Id
@@ -35,5 +34,11 @@ public class Orders {
     @Column
     float totalAmount;
 
-
+    public Orders(int hotelId, String userEmail, Date orderDate, int tableNo, float totalAmount) {
+        this.hotelId = hotelId;
+        this.userEmail = userEmail;
+        this.orderDate = orderDate;
+        this.tableNo = tableNo;
+        this.totalAmount = totalAmount;
+    }
 }

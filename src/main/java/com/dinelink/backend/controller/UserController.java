@@ -43,7 +43,4 @@ public class UserController {
     {
         hotelDao.setIp(hotel_ip,hotel_id);
     }
-
-
-
 }

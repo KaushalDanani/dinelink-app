@@ -24,4 +24,8 @@ public class OrderItemService {
     }
 
 
+    public void save(List<OrderItem> orderItems) {
+        oir.saveAll(orderItems);
+    }
+
 }

@@ -20,7 +20,9 @@ public class OrdersService {
     }
 
     public int save(Orders order){
-        return or.save(order).getOrderId();
+        int id = or.save(order).getOrderId();
+        System.out.println("Order Id : "+id);
+        return id;
     }
     public void removeOrder(@RequestParam("orderId")int orderId){
         or.deleteById(orderId);

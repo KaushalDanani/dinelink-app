@@ -30,18 +30,18 @@ class BackendApplicationTests {
 		hotel.setHotel_id(1);
 		hotel.setHotel_addr("near fatehgunj, Vadodara");
 		hotel.setHotel_name("khodaldham kathiyavadi hotel");
-		hotel.setHotel_rating(5);
-		hotel.setHotel_x_coords(10.10);
+		hotel.setHotel_rating(4.2f);
+		hotel.setHotel_x_coords(10.80);
 		hotel.setHotel_y_coords(10.10);
-		hotel.setHote_password("kkhh001");
+		hotel.setHotel_password("1234");
 		hotel.setHotel_link("www.khodaldhamhotel.com");
 		hotel.setHotel_image(null);
 		hotelDao.save(hotel);
 
-		User user = new User();
-		user.setUser_name("Soham");
-		user.setUser_email("soham@gmail.com");
-		userDao.save(user);
+//		User user = new User();
+//		user.setUser_name("Soham");
+//		user.setUser_email("soham@gmail.com");
+//		userDao.save(user);
 
 	}
 
@@ -137,47 +137,47 @@ class BackendApplicationTests {
 	OrdersRepository or;
 	@Test
 	void addOrders(){
-		Orders o1 = new Orders(1,1,"abc123@gmail.com",new Date(),1,1000);
-		Orders o2 = new Orders(2, 27, "user2@example.com", new Date(), 7, 2000);
-		Orders o3 = new Orders(3, 1, "user3@example.com", new Date(), 8, 2000);
-		Orders o4 = new Orders(4, 92, "user4@example.com", new Date(), 4, 2000);
-		Orders o5 = new Orders(5, 1, "user5@example.com", new Date(), 3, 4000);
-		Orders o6 = new Orders(6, 34, "user6@example.com", new Date(), 5, 4000);
-		Orders o7 = new Orders(7, 73, "user7@example.com", new Date(), 7, 2000);
-		Orders o8 = new Orders(8, 80, "user8@example.com", new Date(), 2, 1000);
-		Orders o9 = new Orders(9, 38, "user9@example.com", new Date(), 9, 1000);
-		Orders o10 = new Orders(10, 1, "user10@example.com", new Date(), 10, 4000);
-		Orders o11 = new Orders(11, 96, "user11@example.com", new Date(), 5, 4000);
-		Orders o12 = new Orders(12, 22, "user12@example.com", new Date(), 4, 2000);
-		Orders o13 = new Orders(13, 1, "user13@example.com", new Date(), 2, 1000);
-		Orders o14 = new Orders(14, 4, "user14@example.com", new Date(), 3, 1000);
-		Orders o15 = new Orders(15, 1, "user15@example.com", new Date(), 6, 4000);
-		Orders o16 = new Orders(16, 49, "user16@example.com", new Date(), 1, 2000);
-		Orders o17 = new Orders(17, 5, "user17@example.com", new Date(), 8, 2000);
-		Orders o18 = new Orders(18, 75, "user18@example.com", new Date(), 9, 4000);
-		Orders o19 = new Orders(19, 82, "user19@example.com", new Date(), 6, 1000);
-		Orders o20 = new Orders(20, 1, "user20@example.com", new Date(), 10, 1000);
-
-		or.save(o1);
-		or.save(o2);
-		or.save(o3);
-		or.save(o4);
-		or.save(o5);
-		or.save(o6);
-		or.save(o7);
-		or.save(o8);
-		or.save(o9);
-		or.save(o10);
-		or.save(o11);
-		or.save(o12);
-		or.save(o13);
-		or.save(o14);
-		or.save(o15);
-		or.save(o16);
-		or.save(o17);
-		or.save(o18);
-		or.save(o19);
-		or.save(o20);
+//		Orders o1 = new Orders(1,1,"abc123@gmail.com",new Date(),1,1000);
+//		Orders o2 = new Orders(2, 27, "user2@example.com", new Date(), 7, 2000);
+//		Orders o3 = new Orders(3, 1, "user3@example.com", new Date(), 8, 2000);
+//		Orders o4 = new Orders(4, 92, "user4@example.com", new Date(), 4, 2000);
+//		Orders o5 = new Orders(5, 1, "user5@example.com", new Date(), 3, 4000);
+//		Orders o6 = new Orders(6, 34, "user6@example.com", new Date(), 5, 4000);
+//		Orders o7 = new Orders(7, 73, "user7@example.com", new Date(), 7, 2000);
+//		Orders o8 = new Orders(8, 80, "user8@example.com", new Date(), 2, 1000);
+//		Orders o9 = new Orders(9, 38, "user9@example.com", new Date(), 9, 1000);
+//		Orders o10 = new Orders(10, 1, "user10@example.com", new Date(), 10, 4000);
+//		Orders o11 = new Orders(11, 96, "user11@example.com", new Date(), 5, 4000);
+//		Orders o12 = new Orders(12, 22, "user12@example.com", new Date(), 4, 2000);
+//		Orders o13 = new Orders(13, 1, "user13@example.com", new Date(), 2, 1000);
+//		Orders o14 = new Orders(14, 4, "user14@example.com", new Date(), 3, 1000);
+//		Orders o15 = new Orders(15, 1, "user15@example.com", new Date(), 6, 4000);
+//		Orders o16 = new Orders(16, 49, "user16@example.com", new Date(), 1, 2000);
+//		Orders o17 = new Orders(17, 5, "user17@example.com", new Date(), 8, 2000);
+//		Orders o18 = new Orders(18, 75, "user18@example.com", new Date(), 9, 4000);
+//		Orders o19 = new Orders(19, 82, "user19@example.com", new Date(), 6, 1000);
+//		Orders o20 = new Orders(20, 1, "user20@example.com", new Date(), 10, 1000);
+//
+//		or.save(o1);
+//		or.save(o2);
+//		or.save(o3);
+//		or.save(o4);
+//		or.save(o5);
+//		or.save(o6);
+//		or.save(o7);
+//		or.save(o8);
+//		or.save(o9);
+//		or.save(o10);
+//		or.save(o11);
+//		or.save(o12);
+//		or.save(o13);
+//		or.save(o14);
+//		or.save(o15);
+//		or.save(o16);
+//		or.save(o17);
+//		or.save(o18);
+//		or.save(o19);
+//		or.save(o20);
 	}
 
 	@Autowired
@@ -185,26 +185,28 @@ class BackendApplicationTests {
 
 	@Test
 	void addOrderItems(){
-		OrderItem oi1 = new OrderItem(1,1,1,2);
-		OrderItem oi2 = new OrderItem(2,1,2,3);
-		OrderItem oi3 = new OrderItem(3,1,3,1);
-		OrderItem oi4 = new OrderItem(4,3,4,2);
-		OrderItem oi5 = new OrderItem(5,3,5,2);
-		OrderItem oi6 = new OrderItem(6,3,6,3);
-		OrderItem oi7 = new OrderItem(7,2,1,3);
-		OrderItem oi8 = new OrderItem(8,2,2,2);
-		OrderItem oi9 = new OrderItem(9,2,3,2);
-		OrderItem oi10 = new OrderItem(10,4,10,1);
-
-		oir.save(oi1);
-		oir.save(oi2);
-		oir.save(oi3);
-		oir.save(oi4);
-		oir.save(oi5);
-		oir.save(oi6);
-		oir.save(oi7);
-		oir.save(oi8);
-		oir.save(oi9);
-		oir.save(oi10);
+//		OrderItem oi1 = new OrderItem(1,1,1,2);
+//		OrderItem oi2 = new OrderItem(2,1,2,3);
+//		OrderItem oi3 = new OrderItem(3,1,3,1);
+//		OrderItem oi4 = new OrderItem(4,3,4,2);
+//		OrderItem oi5 = new OrderItem(5,3,5,2);
+//		OrderItem oi6 = new OrderItem(6,3,6,3);
+//		OrderItem oi7 = new OrderItem(7,2,1,3);
+//		OrderItem oi8 = new OrderItem(8,2,2,2);
+//		OrderItem oi9 = new OrderItem(9,2,3,2);
+//		OrderItem oi10 = new OrderItem(10,4,10,1);
+//
+//		oir.save(oi1);
+//		oir.save(oi2);
+//		oir.save(oi3);
+//		oir.save(oi4);
+//		oir.save(oi5);
+//		oir.save(oi6);
+//		oir.save(oi7);
+//		oir.save(oi8);
+//		oir.save(oi9);
+//		oir.save(oi10);
 	}
+
+
 }
