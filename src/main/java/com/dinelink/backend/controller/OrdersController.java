@@ -3,10 +3,7 @@ package com.dinelink.backend.controller;
 import com.dinelink.backend.model.Orders;
 import com.dinelink.backend.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,10 @@ public class OrdersController {
 
     }
 
+    @PostMapping("/addorder")
+    public int addOrder(@RequestBody Orders order){
+        return os.save(order);
+    }
     @GetMapping(value = "/remove/")
     public void removeOrder(@RequestParam("orderId")int orderId){
         os.removeOrder(orderId);
