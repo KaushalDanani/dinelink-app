@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class OrderItem {
 
@@ -27,4 +26,9 @@ public class OrderItem {
     @Column
     int itemQuantity;
 
+    public OrderItem(int orderId, int itemId, int itemQuantity) {
+        this.orderId = orderId;
+        this.itemId = itemId;
+        this.itemQuantity = itemQuantity;
+    }
 }
