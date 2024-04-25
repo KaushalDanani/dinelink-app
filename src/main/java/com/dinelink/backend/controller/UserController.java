@@ -1,9 +1,9 @@
 package com.dinelink.backend.controller;
 
-import com.dinelink.backend.model.hotel.Hotel;
-import com.dinelink.backend.model.hotel.HotelDao;
-import com.dinelink.backend.model.user.User;
-import com.dinelink.backend.model.user.UserDao;
+import com.dinelink.backend.model.Hotel;
+import com.dinelink.backend.service.HotelDao;
+import com.dinelink.backend.model.User;
+import com.dinelink.backend.service.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

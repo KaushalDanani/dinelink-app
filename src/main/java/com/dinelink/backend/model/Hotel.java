@@ -1,4 +1,4 @@
-package com.dinelink.backend.model.hotel;
+package com.dinelink.backend.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,5 +1,6 @@
-package com.dinelink.backend.model.user;
+package com.dinelink.backend.repository;
 
+import com.dinelink.backend.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

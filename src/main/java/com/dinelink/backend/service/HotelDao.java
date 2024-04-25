@@ -1,12 +1,13 @@
-package com.dinelink.backend.model.hotel;
+package com.dinelink.backend.service;
 
+import com.dinelink.backend.model.Hotel;
+import com.dinelink.backend.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class HotelDao {

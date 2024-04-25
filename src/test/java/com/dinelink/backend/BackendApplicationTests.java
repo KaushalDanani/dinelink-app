@@ -1,20 +1,15 @@
 package com.dinelink.backend;
 
 import com.dinelink.backend.model.FoodItem;
-import com.dinelink.backend.model.OrderItem;
-import com.dinelink.backend.model.Orders;
 import com.dinelink.backend.repository.FoodItemRepository;
 import com.dinelink.backend.repository.OrderItemRepository;
 import com.dinelink.backend.repository.OrdersRepository;
-import com.dinelink.backend.model.hotel.Hotel;
-import com.dinelink.backend.model.hotel.HotelDao;
-import com.dinelink.backend.model.user.User;
-import com.dinelink.backend.model.user.UserDao;
+import com.dinelink.backend.model.Hotel;
+import com.dinelink.backend.service.HotelDao;
+import com.dinelink.backend.service.UserDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Date;
 
 @SpringBootTest
 class BackendApplicationTests {

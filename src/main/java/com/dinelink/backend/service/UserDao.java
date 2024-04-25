@@ -1,5 +1,7 @@
-package com.dinelink.backend.model.user;
+package com.dinelink.backend.service;
 
+import com.dinelink.backend.model.User;
+import com.dinelink.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
