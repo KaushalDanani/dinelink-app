@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Blob;
 
+@SuppressWarnings("JpaAttributeTypeInspection")
 @Entity
 @NoArgsConstructor
 public class Hotel {

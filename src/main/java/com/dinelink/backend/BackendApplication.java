@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.dinelink.backend")
+//@EnableAutoConfiguration
 public class BackendApplication {
 
 	public static void main(String[] args) {
