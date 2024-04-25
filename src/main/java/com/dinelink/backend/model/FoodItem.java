@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class FoodItem {
 
@@ -30,6 +29,15 @@ public class FoodItem {
 
     @Column
     String itemDesc;
+
+    public FoodItem(int hotelId, String itemName, float itemPrice, String itemDesc, String itemCategory, String itemImgUrl) {
+        this.hotelId = hotelId;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.itemDesc = itemDesc;
+        this.itemCategory = itemCategory;
+        this.itemImgUrl = itemImgUrl;
+    }
 
     @Column
     String itemCategory;

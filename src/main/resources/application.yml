@@ -3,7 +3,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dinelink
     userName: root
-    password: mysql@123
+    password:
 
   jpa:
     hibernate.ddl-auto: update
