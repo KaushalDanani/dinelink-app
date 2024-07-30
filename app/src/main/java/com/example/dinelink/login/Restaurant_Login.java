@@ -69,7 +69,7 @@ public class Restaurant_Login extends Activity {
                         int flag = 0;
 
                         for (Hotel h : allHotel) {
-                            if((h.getHotel_id()+"").equals(hotel_id) && h.getHote_password().equals(hotel_password)){
+                            if((h.getHotel_id()+"").equals(hotel_id) && h.getHotel_password().equals(hotel_password)){
                                 flag = 1;
                                 break;
                             }

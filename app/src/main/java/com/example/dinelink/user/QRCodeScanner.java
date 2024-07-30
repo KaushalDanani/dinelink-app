@@ -45,7 +45,6 @@ public class QRCodeScanner extends AppCompatActivity {
     private CodeScanner mCodeScanner;
     boolean isCameraPermission = false, isPhonePermission = false, isSMSPermission = false, isPhoneStatePermission = false;
     public static String USER_PHONE_NO;
-    public static int HOTEL_ID, TABLE_NO;
     ActivityResultLauncher<String[]> activityResultLauncher;
 
 //    private final int CAMERA_REQ_CODE = 10, PHONE_NO_REQ_CODE = 20;
@@ -172,10 +171,9 @@ public class QRCodeScanner extends AppCompatActivity {
                             String sqJson = result.getText();
                             Gson gson = new Gson();
                             q = gson.fromJson(sqJson,QRCodeDecoder.class);
-                            HOTEL_ID = q.hotelId;
-                            TABLE_NO = q.tableNo;
 //                            Toast.makeText(QRCodeScanner.this,q.hotelId+" "+q.tableNo,Toast.LENGTH_SHORT).show();
                             Intent ii = new Intent(QRCodeScanner.this, MenuItemActivity.class);
+                            ii.putExtra("HOTEL_ID", Integer.parseInt(""+q.hotelId));
                             startActivity(ii);
                             Toast.makeText(QRCodeScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
                         }

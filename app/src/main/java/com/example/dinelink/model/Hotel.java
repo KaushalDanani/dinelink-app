@@ -5,7 +5,7 @@ public class Hotel {
 
     private String hotel_id;
     private String hotel_name;
-    private String hote_password;
+    private String hotel_password;
     private String hotel_addr;
     private Double hotel_x_coords;
     private Double Hotel_y_coords;
@@ -29,12 +29,12 @@ public class Hotel {
         this.hotel_name = hotel_name;
     }
 
-    public String getHote_password() {
-        return hote_password;
+    public String getHotel_password() {
+        return hotel_password;
     }
 
-    public void setHote_password(String hote_password) {
-        this.hote_password = hote_password;
+    public void setHotel_password(String hotel_password) {
+        this.hotel_password = hotel_password;
     }
 
     public String getHotel_addr() {
