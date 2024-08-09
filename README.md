@@ -5,6 +5,7 @@
 ### Tech Stack:
 - **Frontend:** Android, Java
 - **Backend:** Spring Boot
+- **Database:** MySQL
 - **APIs:** REST APIs
 
 ### Key Features:
